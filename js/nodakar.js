@@ -8,21 +8,24 @@ function agregarTexto(texto) {
     return textoObj;
 }
 
+function actualizarTexto(nuevoTexto) {
+    var obj = canvas.getActiveObject();
+    if (obj === null || obj === undefined) {
+        var nuevoObj = agregarTexto(nuevoTexto);
+        canvas.setActiveObject(nuevoObj);
+    } else {
+        obj.text = nuevoTexto;
+        canvas.renderAll();
+    }
+}
+
 // UI ---------------------------------------
 
 ENTER_KEY = 13;
 
 var textoElem = document.getElementById("texto");
-textoElem.addEventListener('keypress', function (e) {
-    if (e.keyCode === ENTER_KEY) {
-        var obj = canvas.getActiveObject();
-        if (obj === null) {
-            agregarTexto(e.target.value);
-        } else {
-            obj.text = e.target.value;
-            canvas.renderAll();
-        }
-    }
+textoElem.addEventListener('keyup', function (e) {
+    actualizarTexto(e.target.value);
 });
 
 canvas.on('object:selected', function(e) {
