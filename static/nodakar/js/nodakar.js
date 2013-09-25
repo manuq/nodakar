@@ -1,3 +1,8 @@
+fabric.Object.prototype.borderColor = "rgb(0,255,0)";
+fabric.Object.prototype.cornerColor = "rgb(0,255,0)";
+fabric.Object.prototype.cornerSize = 12;
+fabric.Object.prototype.transparentCorners = false;
+
 var canvas = new fabric.Canvas('nodakar');
 //var mascara = new fabric.Rect({ top: 280, left: 305, width: 310, height: 450, opacity: .2, fill: '#0ff' });
 //canvas.add(mascara);
@@ -6,14 +11,15 @@ canvas.clipTo = function(ctx) {
     ctx.rect(150, 55, 310, 450);
 };
 
-canvas.on("after:render", function(){canvas.calcOffset();});
+canvas.selectionColor = 'rgba(100,255,100,0.3)';
+canvas.selectionBorderColor = 'rgb(0,255,0)';
+canvas.selectionLineWidth = 3;
 
 function imagenCargada(objects) {
     var obj = objects[0];
     obj.set({'top': canvas.height / 4,
              'left': canvas.width / 2});
     canvas.add(obj);
-//    canvas.calcOffset();
     canvas.renderAll();
 }
 
