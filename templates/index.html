@@ -9,7 +9,35 @@
   <script src="{{ url_for('static', filename='fabricjs/all.js') }}"></script>
 </head>
 <body>
-  <div id="main" class="container clear-top">
+  <div id="header">
+    <div class="container clear-top">
+
+      <h1>Decile <strong>NO</strong> al Dakar en Rosario</h1>
+      <a href="#remera" id="menu-remera" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-arrow-down"></span> Diseñá una remera</a>
+      <span class="lead">&nbsp;y sumate a la protesta.</span>
+      <div class="row">
+        <div class="mas-info col-md-10">
+          <p class="lead">Texto informativo texto informativo texto informativo texto informativo
+            texto informativo texto informativo texto informativo texto informativo texto informativo
+            texto informativo.
+          <p class="lead">Texto informativo texto informativo texto informativo texto informativo
+            texto informativo texto informativo texto informativo texto informativo texto informativo
+            texto informativo.
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="logo-wrap">
+    <div class="container clear-top">
+      <a href="http://losverdes.org.ar/nuevo/">
+        <img alt="Los Verdes" src="{{ url_for('static', filename='nodakar/imagenes/logo.png') }}"/>
+      </a>
+    </div>
+  </div>
+
+  <div id="main" name="remera" class="container clear-top">
     <div class="row">
       <div class="col-md-8">
 
@@ -21,9 +49,10 @@
         <form role="form">
           <div class="form-group">
             <label for="texto">Añadir o editar texto</label>
-            <input type="text" id="texto" class="form-control" placeholder="Ingresa texto">
+            <input type="text" id="texto" class="form-control" placeholder="Ingresá texto">
           </div>
-          <a href="#" id="btn-borrar" class="btn btn-default">Borrar seleccionado</a>
+          <a href="#" id="btn-borrar" class="btn btn-default">
+            <span class="glyphicon glyphicon-remove"></span> Borrar seleccionado</a>
         </form>
 
       </div>

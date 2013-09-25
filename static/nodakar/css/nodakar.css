@@ -2,6 +2,40 @@ body {
   background-color: #eee;
 }
 
+#header {
+  color: #fefefe;
+  background-color: #57b004;
+  min-height: 350px;
+}
+
+#header h1 {
+  margin-bottom: 30px;
+}
+
+#header .mas-info {
+  margin-top: 30px;
+  text-align: justify;
+}
+
+#logo-wrap {
+  min-height: 124px;
+  border-bottom: 20px solid #57b004;
+}
+
+#logo-wrap .container {
+  padding: 0;
+  text-align: right;
+}
+
+#logo-wrap a {
+  display: inline-block;
+}
+
+#main {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 #nodakar {
   background-image: url("/static/nodakar/imagenes/remera.png");
   background-repeat: no-repeat;

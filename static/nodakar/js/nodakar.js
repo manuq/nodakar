@@ -67,6 +67,16 @@ function borrarSeleccionado() {
     }
 }
 
+// MENU -------------------------------------
+
+var menuRemeraElem = document.getElementById("menu-remera");
+menuRemeraElem.addEventListener('click', function (e) {
+    $("body, html").animate({
+        scrollTop: $("div[name='remera']").position().top
+    }, 800);
+});
+
+
 // UI ---------------------------------------
 
 ENTER_KEY = 13;
