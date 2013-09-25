@@ -12,11 +12,16 @@ function imagenCargada(objects) {
 
 fabric.loadSVGFromURL("../imagenes/nodakar2.svg", imagenCargada);
 
+// font-family: 'Permanent Marker', cursive;
+// font-family: 'Julee', cursive;
+// font-family: 'Schoolbell', cursive;
+// font-family: 'Merienda One', cursive;
 
 function agregarTexto(texto) {
     var textoObj = new fabric.Text(texto);
     textoObj.set({'top': canvas.height / 2,
-                  'left': canvas.width / 2});
+                  'left': canvas.width / 2,
+                 'fontFamily': 'Julee'});
     canvas.add(textoObj);
     return textoObj;
 }
@@ -52,3 +57,4 @@ canvas.on('selection:cleared', function(e) {
 // MAIN -------------------------------------
 
 var textoObj = agregarTexto("NO AL DAKAR");
+canvas.renderAll();
