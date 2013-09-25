@@ -3,13 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <title>No al Dakar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='nodakar/css/nodakar.css') }}">
   <link href='http://fonts.googleapis.com/css?family=Permanent+Marker|Julee|Schoolbell|Merienda+One' rel='stylesheet' type='text/css'>
   <script src="{{ url_for('static', filename='fabricjs/all.js') }}"></script>
 </head>
 <body>
-  <input id="texto" type="text" />
-  <canvas id="nodakar" width="640", height="400"></canvas>
+  <div id="main" class="container clear-top">
+    <div class="row">
+      <div class="col-md-8">
+        <canvas id="nodakar" width="610", height="590"></canvas>
+      </div>
+      <div class="col-md-4">
+        <input id="texto" type="text" />
+      </div>
+    </div>
+  </div>
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='nodakar/js/nodakar.js') }}"></script>
 </body>
 </html>

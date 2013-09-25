@@ -3,5 +3,6 @@ body {
 }
 
 #nodakar {
-  background-color: #fff;
+  background-image: url("/static/nodakar/imagenes/remera.png");
+  background-repeat: no-repeat;
 }

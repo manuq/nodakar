@@ -1,4 +1,11 @@
 var canvas = new fabric.Canvas('nodakar');
+//var mascara = new fabric.Rect({ top: 280, left: 305, width: 310, height: 450, opacity: .2, fill: '#0ff' });
+//canvas.add(mascara);
+canvas.controlsAboveOverlay = true;
+canvas.clipTo = function(ctx) {
+    ctx.rect(150, 55, 310, 450);
+};
+
 canvas.on("after:render", function(){canvas.calcOffset();});
 
 function imagenCargada(objects) {
