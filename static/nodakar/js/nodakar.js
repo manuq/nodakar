@@ -10,7 +10,7 @@ function imagenCargada(objects) {
     canvas.renderAll();
 }
 
-fabric.loadSVGFromURL("../imagenes/nodakar2.svg", imagenCargada);
+fabric.loadSVGFromURL("/static/nodakar/imagenes/nodakar2.svg", imagenCargada);
 
 // font-family: 'Permanent Marker', cursive;
 // font-family: 'Julee', cursive;
