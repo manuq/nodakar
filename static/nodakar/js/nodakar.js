@@ -50,6 +50,23 @@ function actualizarTexto(nuevoTexto) {
     }
 }
 
+function borrarSeleccionado() {
+    var obj = canvas.getActiveObject();
+    var group = canvas.getActiveGroup();
+
+    if (obj !== null && obj !== undefined) {
+        canvas.discardActiveObject();
+        canvas.fxRemove(obj);
+    }
+
+    if (group !== null && group !== undefined) {
+        canvas.discardActiveGroup();
+        group.forEachObject(function (obj) {
+            canvas.fxRemove(obj);
+        });
+    }
+}
+
 // UI ---------------------------------------
 
 ENTER_KEY = 13;
@@ -57,6 +74,13 @@ ENTER_KEY = 13;
 var textoElem = document.getElementById("texto");
 textoElem.addEventListener('keyup', function (e) {
     actualizarTexto(e.target.value);
+});
+
+var borrarlem = document.getElementById("btn-borrar");
+borrarlem.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    borrarSeleccionado();
 });
 
 canvas.on('object:selected', function(e) {
@@ -68,6 +92,10 @@ canvas.on('object:selected', function(e) {
 });
 
 canvas.on('selection:cleared', function(e) {
+    textoElem.value = "";
+});
+
+canvas.on('object:removed', function(e) {
     textoElem.value = "";
 });
 
