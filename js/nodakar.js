@@ -28,7 +28,7 @@ function agregarTexto(texto) {
 
 function actualizarTexto(nuevoTexto) {
     var obj = canvas.getActiveObject();
-    if (obj === null || obj === undefined) {
+    if (obj === null || obj === undefined || obj.type !== 'text') {
         var nuevoObj = agregarTexto(nuevoTexto);
         canvas.setActiveObject(nuevoObj);
     } else {
@@ -47,7 +47,11 @@ textoElem.addEventListener('keyup', function (e) {
 });
 
 canvas.on('object:selected', function(e) {
-    textoElem.value = e.target.text;
+    if (e.target.type === 'text') {
+        textoElem.value = e.target.text;
+    } else {
+        textoElem.value = "";
+    }
 });
 
 canvas.on('selection:cleared', function(e) {
