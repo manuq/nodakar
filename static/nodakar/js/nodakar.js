@@ -1,4 +1,5 @@
 fabric.Object.prototype.borderColor = "rgb(0,255,0)";
+fabric.Object.prototype.borderOpacityWhenMoving = 1;
 fabric.Object.prototype.cornerColor = "rgb(0,255,0)";
 fabric.Object.prototype.cornerSize = 12;
 fabric.Object.prototype.transparentCorners = false;
