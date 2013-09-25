@@ -1,4 +1,17 @@
 var canvas = new fabric.Canvas('nodakar');
+canvas.on("after:render", function(){canvas.calcOffset();});
+
+function imagenCargada(objects) {
+    var obj = objects[0];
+    obj.set({'top': canvas.height / 4,
+             'left': canvas.width / 2});
+    canvas.add(obj);
+//    canvas.calcOffset();
+    canvas.renderAll();
+}
+
+fabric.loadSVGFromURL("../imagenes/nodakar2.svg", imagenCargada);
+
 
 function agregarTexto(texto) {
     var textoObj = new fabric.Text(texto);
