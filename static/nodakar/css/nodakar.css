@@ -39,6 +39,11 @@ body {
   width: 100%;
 }
 
+#disenios {
+  min-height: 110px;
+  background-color: #fff;
+}
+
 #nodakar {
   background-image: url("/static/nodakar/imagenes/remera.png");
   background-repeat: no-repeat;
