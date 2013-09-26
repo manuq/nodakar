@@ -246,6 +246,7 @@ canvas.on('before:selection:cleared', function(e) {
 });
 
 canvas.on('mouse:down', function(e) {
+    mascara.bringToFront();
     mascara.set('visible', true);
 });
 
