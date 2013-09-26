@@ -43,7 +43,8 @@ function imagenSVGCargada(objects) {
     obj.set({'top': canvas.height / 4,
              'left': canvas.width / 2});
     canvas.add(obj);
-    canvas.renderAll();
+    canvas.setActiveObject(obj);
+//    canvas.renderAll();
 }
 
 // font-family: 'Permanent Marker', cursive;
