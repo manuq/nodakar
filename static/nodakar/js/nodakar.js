@@ -33,9 +33,11 @@ fabric.loadSVGFromURL("/static/nodakar/imagenes/nodakar2.svg", imagenSVGCargada)
 
 function agregarTexto(texto) {
     var textoObj = new fabric.Text(texto);
-    textoObj.set({'top': canvas.height / 2,
-                  'left': canvas.width / 2,
-                 'fontFamily': 'Julee'});
+    textoObj.set({
+        'top': canvas.height / 2,
+        'left': canvas.width / 2,
+        'fontFamily': 'Julee'
+    });
     canvas.add(textoObj);
     return textoObj;
 }
@@ -65,6 +67,38 @@ function borrarSeleccionado() {
         group.forEachObject(function (obj) {
             canvas.fxRemove(obj);
         });
+    }
+}
+
+function subirSeleccionado() {
+    var obj = canvas.getActiveObject();
+
+    if (obj !== null && obj !== undefined) {
+        obj.bringForward();
+    }
+}
+
+function bajarSeleccionado() {
+    var obj = canvas.getActiveObject();
+
+    if (obj !== null && obj !== undefined) {
+        obj.sendBackwards();
+    }
+}
+
+function frenteSeleccionado() {
+    var obj = canvas.getActiveObject();
+
+    if (obj !== null && obj !== undefined) {
+        obj.bringToFront();
+    }
+}
+
+function fondoSeleccionado() {
+    var obj = canvas.getActiveObject();
+
+    if (obj !== null && obj !== undefined) {
+        obj.sendToBack();
     }
 }
 
@@ -107,12 +141,41 @@ textoElem.addEventListener('keyup', function (e) {
     actualizarTexto(e.target.value);
 });
 
-var borrarlem = document.getElementById("btn-borrar");
-borrarlem.addEventListener('click', function (e) {
+var borrarElem = document.getElementById("btn-borrar");
+borrarElem.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
     borrarSeleccionado();
 });
+
+
+document.getElementById("btn-subir").
+    addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        subirSeleccionado();
+    });
+
+document.getElementById("btn-bajar").
+    addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        bajarSeleccionado();
+    });
+
+document.getElementById("btn-frente").
+    addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        frenteSeleccionado();
+    });
+
+document.getElementById("btn-fondo").
+    addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        fondoSeleccionado();
+    });
 
 $("#imagen").change(function(e) {
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
