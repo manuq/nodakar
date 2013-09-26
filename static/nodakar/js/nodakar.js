@@ -235,5 +235,5 @@ canvas.on('object:removed', function(e) {
 // MAIN -------------------------------------
 
 // var textoObj = agregarTexto("NO AL DAKAR");
-cargarImagen("/static/logo-pyar.png")
+// cargarImagen("/static/logo-pyar.png")
 canvas.renderAll();
