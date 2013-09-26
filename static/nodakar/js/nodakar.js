@@ -205,6 +205,12 @@ canvas.on('object:selected', function(e) {
     }
 });
 
+canvas.on('before:selection:cleared', function(e) {
+    if (e.target.type === 'text' && e.target.text == '') {
+        canvas.remove(e.target);
+    }
+});
+
 canvas.on('selection:cleared', function(e) {
     textoElem.value = "";
 });
