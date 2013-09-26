@@ -35,6 +35,10 @@ body {
   padding-bottom: 30px;
 }
 
+#remera .btn-group-vertical {
+  width: 100%;
+}
+
 #nodakar {
   background-image: url("/static/nodakar/imagenes/remera.png");
   background-repeat: no-repeat;
