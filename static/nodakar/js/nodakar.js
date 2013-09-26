@@ -215,17 +215,21 @@ document.getElementById("btn-fondo").
         fondoSeleccionado();
     });
 
-$("#imagen").change(function(e) {
-    for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-        var file = e.originalEvent.srcElement.files[i];
+window.onload = function() {
+    $('input[type=file]').bootstrapFileInput();
 
-        var reader = new FileReader();
-        reader.onloadend = function() {
-            cargarImagen(reader.result);
+    $("#imagen").change(function(e) {
+        for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+            var file = e.originalEvent.srcElement.files[i];
+
+            var reader = new FileReader();
+            reader.onloadend = function() {
+                cargarImagen(reader.result);
+            }
+            reader.readAsDataURL(file);
         }
-        reader.readAsDataURL(file);
-    }
-});
+    });
+}
 
 canvas.on('object:selected', function(e) {
     if (e.target.type === 'text') {
