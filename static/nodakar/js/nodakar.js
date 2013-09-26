@@ -117,24 +117,29 @@ function cargarImagen(url) {
 
 // MENU -------------------------------------
 
-var menuRemeraElem = document.getElementById("menu-remera");
-menuRemeraElem.addEventListener('click', function (e) {
-    $("body, html").animate({
-        scrollTop: $("div[name='remera']").position().top
-    }, 800);
-});
+document.getElementById("menu-remera").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='remera']").position().top
+        }, 800);
+    });
 
-var menuMasInfoElem = document.getElementById("menu-mas-info");
-menuMasInfoElem.addEventListener('click', function (e) {
-    $("body, html").animate({
-        scrollTop: $("div[name='mas-info']").position().top
-    }, 800);
-});
+document.getElementById("mas-info-remera").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='remera']").position().top
+        }, 800);
+    });
+
+document.getElementById("menu-mas-info").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='mas-info']").position().top
+        }, 800);
+    });
 
 
 // UI ---------------------------------------
-
-ENTER_KEY = 13;
 
 var textoElem = document.getElementById("texto");
 textoElem.addEventListener('keyup', function (e) {
@@ -147,7 +152,6 @@ borrarElem.addEventListener('click', function (e) {
     e.stopPropagation();
     borrarSeleccionado();
 });
-
 
 document.getElementById("btn-subir").
     addEventListener('click', function (e) {
