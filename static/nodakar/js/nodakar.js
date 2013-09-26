@@ -2,7 +2,7 @@
 AREA_IZQUIERDA = 150;
 AREA_ARRIBA = 55;
 AREA_ANCHO = 310;
-AREA_ALTO = 450;
+AREA_ALTO = 400;
 
 fabric.Object.prototype.borderColor = "rgb(0,255,0)";
 fabric.Object.prototype.borderOpacityWhenMoving = 1;
