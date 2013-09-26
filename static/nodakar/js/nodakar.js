@@ -1,3 +1,7 @@
+// area en el que se puede diseñar
+AREA_ANCHO = 0;
+AREA_ALTO = 0;
+
 fabric.Object.prototype.borderColor = "rgb(0,255,0)";
 fabric.Object.prototype.borderOpacityWhenMoving = 1;
 fabric.Object.prototype.cornerColor = "rgb(0,255,0)";
@@ -48,7 +52,7 @@ function actualizarTexto(nuevoTexto) {
         var nuevoObj = agregarTexto(nuevoTexto);
         canvas.setActiveObject(nuevoObj);
     } else {
-        obj.text = nuevoTexto;
+        obj.set({text: nuevoTexto});
         canvas.renderAll();
     }
 }
@@ -211,5 +215,5 @@ canvas.on('object:removed', function(e) {
 
 // MAIN -------------------------------------
 
-var textoObj = agregarTexto("NO AL DAKAR");
+// var textoObj = agregarTexto("NO AL DAKAR");
 canvas.renderAll();
