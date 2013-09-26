@@ -12,9 +12,8 @@ body {
   margin-bottom: 30px;
 }
 
-#header .mas-info {
+#header .info {
   margin-top: 30px;
-  text-align: justify;
 }
 
 #logo-wrap {
@@ -39,4 +38,10 @@ body {
 #nodakar {
   background-image: url("/static/nodakar/imagenes/remera.png");
   background-repeat: no-repeat;
+}
+
+#mas-info {
+  color: #fefefe;
+  background-color: #3b5998;
+  min-height: 800px;
 }

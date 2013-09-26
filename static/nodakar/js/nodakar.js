@@ -16,7 +16,7 @@ canvas.selectionColor = 'rgba(100,255,100,0.3)';
 canvas.selectionBorderColor = 'rgb(0,255,0)';
 canvas.selectionLineWidth = 3;
 
-function imagenCargada(objects) {
+function imagenSVGCargada(objects) {
     var obj = objects[0];
     obj.set({'top': canvas.height / 4,
              'left': canvas.width / 2});
@@ -24,7 +24,7 @@ function imagenCargada(objects) {
     canvas.renderAll();
 }
 
-fabric.loadSVGFromURL("/static/nodakar/imagenes/nodakar2.svg", imagenCargada);
+fabric.loadSVGFromURL("/static/nodakar/imagenes/nodakar2.svg", imagenSVGCargada);
 
 // font-family: 'Permanent Marker', cursive;
 // font-family: 'Julee', cursive;
@@ -68,12 +68,32 @@ function borrarSeleccionado() {
     }
 }
 
+function imagenCargada(imagen) {
+  imagen.scale(0.5).set({
+      'top': canvas.height / 2,
+      'left': canvas.width / 2
+  });
+  canvas.add(imagen).setActiveObject(imagen);
+}
+
+function cargarImagen(url) {
+    fabric.Image.fromURL(url, imagenCargada);
+}
+
+
 // MENU -------------------------------------
 
 var menuRemeraElem = document.getElementById("menu-remera");
 menuRemeraElem.addEventListener('click', function (e) {
     $("body, html").animate({
         scrollTop: $("div[name='remera']").position().top
+    }, 800);
+});
+
+var menuMasInfoElem = document.getElementById("menu-mas-info");
+menuMasInfoElem.addEventListener('click', function (e) {
+    $("body, html").animate({
+        scrollTop: $("div[name='mas-info']").position().top
     }, 800);
 });
 
@@ -92,6 +112,18 @@ borrarlem.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
     borrarSeleccionado();
+});
+
+$("#imagen").change(function(e) {
+    for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+        var file = e.originalEvent.srcElement.files[i];
+
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            cargarImagen(reader.result);
+        }
+        reader.readAsDataURL(file);
+    }
 });
 
 canvas.on('object:selected', function(e) {
