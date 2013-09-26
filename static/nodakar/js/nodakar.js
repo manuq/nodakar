@@ -12,7 +12,7 @@ canvas.clipTo = function(ctx) {
     ctx.rect(150, 55, 310, 450);
 };
 
-canvas.selectionColor = 'rgba(100,255,100,0.3)';
+canvas.selectionColor = 'transparent';
 canvas.selectionBorderColor = 'rgb(0,255,0)';
 canvas.selectionLineWidth = 3;
 
