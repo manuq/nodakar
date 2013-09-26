@@ -1,4 +1,6 @@
 // area en el que se puede diseñar
+AREA_IZQUIERDA = 150;
+AREA_ARRIBA = 55;
 AREA_ANCHO = 310;
 AREA_ALTO = 450;
 
@@ -9,11 +11,26 @@ fabric.Object.prototype.cornerSize = 12;
 fabric.Object.prototype.transparentCorners = false;
 
 var canvas = new fabric.Canvas('nodakar');
-//var mascara = new fabric.Rect({ top: 280, left: 305, width: 310, height: 450, opacity: .2, fill: '#0ff' });
-//canvas.add(mascara);
+var mascara = new fabric.Rect({
+    originX: 'left',
+    originY: 'top',
+    left: AREA_IZQUIERDA,
+    top: AREA_ARRIBA,
+    width: AREA_ANCHO - 4,
+    height: AREA_ALTO - 4,
+    selectable: false,
+    visible: false,
+    opacity: .5,
+    stroke: 'rgb(0,255,0)',
+    strokeWidth: 4,
+    strokeDashArray: [10, 4],
+    fill: 'transparent'
+});
+
+canvas.add(mascara);
 canvas.controlsAboveOverlay = true;
 canvas.clipTo = function(ctx) {
-    ctx.rect(150, 55, AREA_ANCHO, AREA_ALTO);
+    ctx.rect(AREA_IZQUIERDA, AREA_ARRIBA, AREA_ANCHO, AREA_ALTO);
 };
 
 canvas.selectionColor = 'transparent';
@@ -222,6 +239,15 @@ canvas.on('before:selection:cleared', function(e) {
     if (e.target.type === 'text' && e.target.text == '') {
         canvas.remove(e.target);
     }
+});
+
+canvas.on('mouse:down', function(e) {
+    mascara.set('visible', true);
+});
+
+canvas.on('mouse:up', function(e) {
+    mascara.set('visible', false);
+    canvas.renderAll();
 });
 
 canvas.on('selection:cleared', function(e) {
