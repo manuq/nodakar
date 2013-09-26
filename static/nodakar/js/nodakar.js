@@ -11,6 +11,7 @@ fabric.Object.prototype.cornerSize = 12;
 fabric.Object.prototype.transparentCorners = false;
 
 var canvas = new fabric.Canvas('nodakar');
+
 var mascara = new fabric.Rect({
     originX: 'left',
     originY: 'top',
@@ -44,8 +45,6 @@ function imagenSVGCargada(objects) {
     canvas.add(obj);
     canvas.renderAll();
 }
-
-fabric.loadSVGFromURL("/static/nodakar/imagenes/nodakar2.svg", imagenSVGCargada);
 
 // font-family: 'Permanent Marker', cursive;
 // font-family: 'Julee', cursive;
@@ -218,7 +217,15 @@ document.getElementById("btn-fondo").
 window.onload = function() {
     $('input[type=file]').bootstrapFileInput();
 
-    $("#imagen").change(function(e) {
+    $('#disenios a').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var src = this.getElementsByTagName('img')[0].src;
+        // cargarImagen(src);
+        fabric.loadSVGFromURL(src, imagenSVGCargada);
+    });
+
+    $("#imagen").change(function (e) {
         for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
             var file = e.originalEvent.srcElement.files[i];
 

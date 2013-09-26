@@ -40,12 +40,22 @@ body {
 }
 
 #disenios {
-  min-height: 110px;
+  display: block;
+  height: 110px;
   background-color: #fff;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+#disenios img {
+  margin-top: 10px;
+  max-width: 80px;
+  max-height: 80px;
+  display: inline;
 }
 
 #nodakar {
-  background-image: url("/static/nodakar/imagenes/remera.png");
+  background-image: url("../imagenes/remera.png");
   background-repeat: no-repeat;
 }
 
