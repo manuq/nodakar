@@ -1,6 +1,6 @@
 // area en el que se puede diseñar
-AREA_ANCHO = 0;
-AREA_ALTO = 0;
+AREA_ANCHO = 310;
+AREA_ALTO = 450;
 
 fabric.Object.prototype.borderColor = "rgb(0,255,0)";
 fabric.Object.prototype.borderOpacityWhenMoving = 1;
@@ -13,7 +13,7 @@ var canvas = new fabric.Canvas('nodakar');
 //canvas.add(mascara);
 canvas.controlsAboveOverlay = true;
 canvas.clipTo = function(ctx) {
-    ctx.rect(150, 55, 310, 450);
+    ctx.rect(150, 55, AREA_ANCHO, AREA_ALTO);
 };
 
 canvas.selectionColor = 'transparent';
@@ -107,7 +107,20 @@ function fondoSeleccionado() {
 }
 
 function imagenCargada(imagen) {
-  imagen.scale(0.5).set({
+  var escala_ancho = 1;
+  var escala_alto = 1;
+
+  if ((imagen.width - AREA_ANCHO) > 0) {
+      escala_ancho = AREA_ANCHO / imagen.width;
+  }
+
+  if ((imagen.height - AREA_ALTO) > 0) {
+      escala_alto = AREA_ALTO / imagen.height;
+  }
+
+  var escala = Math.min(escala_ancho, escala_alto);
+
+  imagen.scale(escala).set({
       'top': canvas.height / 2,
       'left': canvas.width / 2
   });
@@ -222,4 +235,5 @@ canvas.on('object:removed', function(e) {
 // MAIN -------------------------------------
 
 // var textoObj = agregarTexto("NO AL DAKAR");
+cargarImagen("/static/logo-pyar.png")
 canvas.renderAll();
