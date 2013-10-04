@@ -12,6 +12,11 @@ body {
   margin-bottom: 30px;
 }
 
+#header .underline {
+  color: #fefefe;
+  text-decoration: underline;
+}
+
 #header .info {
   margin-top: 30px;
 }
