@@ -44,6 +44,11 @@ body {
   width: 100%;
 }
 
+#remera #btn-fin {
+  color: #fefefe;
+  background-color: #57b004;
+}
+
 #disenios {
   display: block;
   height: 110px;
