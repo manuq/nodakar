@@ -44,7 +44,7 @@ body {
   width: 100%;
 }
 
-#remera #btn-fin {
+.btn-verde, .btn-verde:hover, .btn-verde:focus {
   color: #fefefe;
   background-color: #57b004;
 }

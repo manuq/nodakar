@@ -60,15 +60,15 @@
       <div class="col-md-4">
 
         <div class="form-group">
-          <label for="texto">Agregar o editar texto</label>
+          <label for="texto">Agregá o editá texto</label>
           <input type="text" id="texto" class="form-control" placeholder="Ingresá texto">
         </div>
         <div class="form-group">
-          <label for="imagen">Agregar imagen</label>
+          <label for="imagen">Agregá una imagen</label>
           <input type="file" id="imagen" title="Subir imagen" class="btn btn-default">
         </div>
         <div class="form-group">
-          <label for="imagen">Agregar diseño</label>
+          <label for="imagen">Agregá un diseño</label>
           <div id="disenios" class="row-fluid">
             <a href="#">
               <img src="{{ url_for('static', filename='nodakar/imagenes/nodakar2.svg') }}"/>
@@ -94,29 +94,49 @@
           </div>
         </div>
         <div class="form-group">
-          <label>Editar seleccionado</label>
+          <label>Editá lo seleccionado</label>
           <div class="clear-top">
             <div class="btn-group-vertical clear-top">
               <a href="#" id="btn-borrar" class="btn btn-default">
                 <span class="glyphicon glyphicon-remove"></span> Borrar</a>
               <a href="#" id="btn-subir" class="btn btn-default">
-                <span class="glyphicon glyphicon-arrow-up"></span> Subir elemento</a>
+                <span class="glyphicon glyphicon-arrow-up"></span> Subir</a>
               <a href="#" id="btn-bajar" class="btn btn-default">
-                <span class="glyphicon glyphicon-arrow-down"></span> Bajar elemento</a>
-              <a href="#" id="btn-frente" class="btn btn-default">Traer elemento al frente</a>
-              <a href="#" id="btn-fondo" class="btn btn-default">Mandar elemento al fondo</a>
+                <span class="glyphicon glyphicon-arrow-down"></span> Bajar</a>
+              <!-- <a href="#" id="btn-frente" class="btn btn-default">Traer elemento al frente</a> -->
+              <!-- <a href="#" id="btn-fondo" class="btn btn-default">Mandar elemento al fondo</a> -->
             </div>
           </div>
         </div>
         <div class="form-group">
           <label>¿Terminaste?</label>
-        <a href="#" id="btn-fin" class="btn btn-default btn-lg">
+        <a id="btn-fin" class="btn btn-default btn-lg btn-verde" data-toggle="modal" href="#formuPublicar">
           <span class="glyphicon glyphicon-picture"></span> ¡Publicar!</a>
         </div>
 
       </div>
     </div>
   </div>
+
+
+  <div class="modal fade" id="formuPublicar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Publicá la remera</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-verde">
+            <span class="glyphicon glyphicon-picture"></span>¡Publicar!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div name="mas-info" id="mas-info">
     <div class="container clear-top">

@@ -201,19 +201,19 @@ document.getElementById("btn-bajar").
         bajarSeleccionado();
     });
 
-document.getElementById("btn-frente").
-    addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        frenteSeleccionado();
-    });
+// document.getElementById("btn-frente").
+//     addEventListener('click', function (e) {
+//         e.preventDefault();
+//         e.stopPropagation();
+//         frenteSeleccionado();
+//     });
 
-document.getElementById("btn-fondo").
-    addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        fondoSeleccionado();
-    });
+// document.getElementById("btn-fondo").
+//     addEventListener('click', function (e) {
+//         e.preventDefault();
+//         e.stopPropagation();
+//         fondoSeleccionado();
+//     });
 
 window.onload = function() {
     $('input[type=file]').bootstrapFileInput();
