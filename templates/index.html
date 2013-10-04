@@ -121,19 +121,57 @@
 
   <div class="modal fade" id="formuPublicar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
+
+      <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{ url_for('publicar') }}">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title">Publicá la remera</h4>
         </div>
         <div class="modal-body">
-          ...
+
+          <div class="form-group">
+            <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
+            <div class="col-lg-10">
+              <input type="text" name="nombre" id="inputNombre" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputCorreo" class="col-lg-2 control-label">Correo electrónico</label>
+            <div class="col-lg-10">
+              <input type="email" name="correo" id="inputCorreo" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputCiudad" class="col-lg-2 control-label">Ciudad</label>
+            <div class="col-lg-10">
+              <input type="text" name="ciudad" id="inputCiudad" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputProvincia" class="col-lg-2 control-label">Provincia</label>
+            <div class="col-lg-10">
+              <input type="text" name="provincia" id="inputProvincia" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputPais" class="col-lg-2 control-label">País</label>
+            <div class="col-lg-10">
+              <input type="text" name="pais" id="inputPais" class="form-control">
+            </div>
+          </div>
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-lg btn-verde">
+          <button type="submit" class="btn btn-lg btn-verde">
             <span class="glyphicon glyphicon-picture"></span>¡Publicar!</button>
         </div>
       </div>
+      </form>
     </div>
   </div>
 

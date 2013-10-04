@@ -2,6 +2,9 @@
 import os
 from flask import Flask
 from flask import render_template
+from flask import request
+from flask import redirect
+from flask import url_for
 
 PRODUCCION = False
 
@@ -25,6 +28,16 @@ app.secret_key = "unodostres"
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/gracias')
+def gracias():
+    return render_template('gracias.html')
+
+@app.route('/publicar', methods=["POST"])
+def publicar():
+    print request.form['nombre'], request.form['correo'], request.form['ciudad'], request.form['provincia'], request.form['pais']
+    print request.files
+    return redirect(url_for("gracias"))
 
 if __name__ == '__main__':
 
