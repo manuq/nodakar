@@ -148,6 +148,28 @@ function cargarImagen(url) {
     fabric.Image.fromURL(url, imagenCargada);
 }
 
+function canvasComoImagen() {
+        canvas.deactivateAll().renderAll();
+
+        var canvasImagen = document.getElementById("nodakar");
+
+        var fondo = new Image();
+        fondo.src = "/static/nodakar/imagenes/remera.png";
+
+        var imagen = new Image();
+        imagen.src = canvasImagen.toDataURL();
+
+        var canvasSalida = document.createElement('canvas');
+        canvasSalida.width = canvasImagen.width;
+        canvasSalida.height = canvasImagen.height;
+
+        var ctx = canvasSalida.getContext("2d");
+        ctx.drawImage(fondo, 0, 0);
+        ctx.drawImage(imagen, 0, 0);
+
+        return canvasSalida.toDataURL();
+}
+
 
 // MENU -------------------------------------
 
