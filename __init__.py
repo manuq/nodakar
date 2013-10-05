@@ -35,7 +35,7 @@ def gracias():
 
 @app.route('/publicar', methods=["POST"])
 def publicar():
-    print request.form['nombre'], request.form['correo'], request.form['ciudad'], request.form['provincia'], request.form['pais']
+    print request.form['nombre'], request.form['correo'], request.form['ciudad'], request.form['provincia'], request.form['pais'], request.form['imagen']
     print request.files
     return redirect(url_for("gracias"))
 

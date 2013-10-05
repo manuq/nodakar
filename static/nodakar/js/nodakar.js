@@ -237,6 +237,12 @@ document.getElementById("btn-bajar").
 //         fondoSeleccionado();
 //     });
 
+document.getElementById("btn-fin").
+    addEventListener('click', function (e) {
+        var inputImagen = document.getElementById("inputImagen");
+        inputImagen.value = canvasComoImagen();
+    });
+
 window.onload = function() {
     $('input[type=file]').bootstrapFileInput();
 
