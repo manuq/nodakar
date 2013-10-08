@@ -2,16 +2,25 @@
 
   {% block body %}
   <div class="container">
-    <div class="col-md-4">
-      <h3><strong>{{ nombre }}</strong> le dijo NO al Dakar</h3>
-      <p>
-        Decile vos también,
-      <a href="{{ url_for('index') }}" class="btn btn-default btn-lg">
-        Diseñá tu remera</a>
-      </p>
-      <h3>Compartir</h3>
+    <div id="barra-detalle" class="col-md-4">
+      <div>
+        <h2><strong>{{ nombre }}</strong> le sacó la camiseta al Dakar</h2>
+        <p class="lead">
+          Hacelo vos también,
+          <a href="{{ url_for('index') }}" class="btn btn-default btn-lg">
+            Diseñá tu remera</a>
+        </p>
+        <h2>Compartir</h2>
+      </div>
+      <div id="logo-wrap" class="gris">
+        <div class="container clear-top">
+          <a href="http://losverdes.org.ar/nuevo/">
+            <img alt="Los Verdes" src="{{ url_for('static', filename='nodakar/imagenes/logogris.png') }}"/>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="col-md-8">
+    <div id="remera-publicada" class="col-md-8">
       <img src="{{ config.URL_SUBIDOS }}{{ id_remera }}.png"></img>
     </div>
   </div>

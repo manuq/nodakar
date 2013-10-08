@@ -31,6 +31,12 @@ body {
   text-align: right;
 }
 
+#logo-wrap.gris {
+  padding-top: 100px;
+  border-bottom: 0;
+  min-height: initial;
+}
+
 #logo-wrap a {
   display: inline-block;
 }
@@ -73,4 +79,13 @@ body {
   color: #fefefe;
   background-color: #3b5998;
   min-height: 800px;
+}
+
+#barra-detalle {
+  color: #fefefe;
+  background-color: #57b004;
+}
+
+#remera-publicada {
+  padding-top: 30px;
 }
