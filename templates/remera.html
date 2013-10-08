@@ -6,6 +6,7 @@
 
   {% block body %}
   <div class="container">
+    <div class="row">
     <div id="barra-detalle" class="col-md-4">
       <div>
         <h2><strong>{{ nombre }}</strong> le sacó la camiseta al Dakar</h2>
@@ -37,5 +38,6 @@
     <div id="remera-publicada" class="col-md-8">
       <img src="{{ config.URL_SUBIDOS }}{{ id_remera }}.png"></img>
     </div>
+  </div>
   </div>
   {% endblock %}
