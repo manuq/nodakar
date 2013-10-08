@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>No al Dakar</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='nodakar/css/nodakar.css') }}">
+{% extends "base.html" %}
+
+  {% block head %}
   <link href='http://fonts.googleapis.com/css?family=Permanent+Marker|Julee|Schoolbell|Merienda+One' rel='stylesheet' type='text/css'>
   <script src="{{ url_for('static', filename='fabricjs/all.js') }}"></script>
-<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='nodakar/imagenes/favicon.ico') }}" />
-</head>
-<body>
+  {% endblock %}
+
+  {% block body %}
   <div id="header">
     <div class="container clear-top">
 
@@ -219,11 +215,9 @@
       </div>
     </div>
   </div>
+  {% endblock %}
 
-  <script src="//code.jquery.com/jquery.js"></script>
-  <!-- <script src="{{ url_for('static', filename='jquery.js') }}"></script> -->
-  <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+  {% block bodyscripts %}
   <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.file-input.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='nodakar/js/nodakar.js') }}"></script>
-</body>
-</html>
+  {% endblock %}
