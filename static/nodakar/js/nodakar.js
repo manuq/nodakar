@@ -283,6 +283,10 @@ window.onload = function() {
         fabric.loadSVGFromURL(src, imagenSVGCargada);
     });
 
+    $('#carrusel').carousel({
+        interval: 3000
+    });
+
     $("#imagen").change(function (e) {
         for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
             var file = e.originalEvent.srcElement.files[i];
