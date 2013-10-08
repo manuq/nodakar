@@ -60,38 +60,43 @@ def close_connection(exception):
 def index():
     return render_template('index.html')
 
-@app.route('/gracias')
-def gracias():
-    return render_template('gracias.html')
+@app.route('/remera')
+def remera():
+    # si el id de la remera no se encuentra en la base de datos,
+    # mandar 404
+
+    # si el id se encuentra, obtener el archivo y mostrarlo
+    return render_template('remera.html')
 
 @app.route('/publicar', methods=["POST"])
 def publicar():
 
     # hacer un archivo de nombre unico para la imagen
+    id_remera = None
     nombre_archivo = None
-    nombre_con_subdir = None
     while nombre_archivo is None:
-        nombre = str(uuid.uuid4())[:8] + '.png'
-        nombre_con_subdir = os.path.join(app.config['CARPETA_SUBIDOS'], nombre)
-        if not os.path.exists(nombre_con_subdir):
+        id_remera = str(uuid.uuid4())[:8]
+        nombre = os.path.join(app.config['CARPETA_SUBIDOS'], id_remera + '.png')
+        if not os.path.exists(nombre):
             nombre_archivo = nombre
 
-    archivo = open(nombre_con_subdir, "wb")
+    archivo = open(nombre_archivo, "wb")
 
+    # guardar los datos de la imagen en el archivo
     datos_imagen = request.form['imagen']
     encabezado, cuerpo = datos_imagen.split(',')
     archivo.write(cuerpo.decode('base64'))
     archivo.close()
 
-    datos = (None, request.form['nombre'], request.form['correo'],
+    datos = (None, id_remera, request.form['nombre'], request.form['correo'],
              request.form['ciudad'], request.form['provincia'],
-             request.form['pais'], nombre_archivo)
+             request.form['pais'], False)
 
     cur = get_db().cursor()
-    cur.execute('insert into nodakar values (?,?,?,?,?,?,?)', datos)
+    cur.execute('insert into nodakar values (?,?,?,?,?,?,?,?)', datos)
     get_db().commit()
 
-    return redirect(url_for("gracias"))
+    return redirect(url_for("remera"))
 
 if __name__ == '__main__':
 
