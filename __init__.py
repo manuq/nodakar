@@ -13,11 +13,14 @@ from flask import g
 BASE_DE_DATOS = os.path.join(os.path.dirname(__file__), 'nodakar.db')
 CARPETA_SUBIDOS = os.path.join(os.path.dirname(__file__), 'media')
 
-
+# FIXME PROD cambiar
 PRODUCCION = False
 
 app = Flask(__name__)
 app.config['CARPETA_SUBIDOS'] = CARPETA_SUBIDOS
+
+# FIXME PROD cambiar
+app.config['URL_SUBIDOS'] = "http://0.0.0.0:8000/"
 
 class WebFactionMiddleware(object):
     def __init__(self, app):
@@ -60,13 +63,13 @@ def close_connection(exception):
 def index():
     return render_template('index.html')
 
-@app.route('/remera')
-def remera():
+@app.route('/remera/<id_remera>')
+def remera(id_remera):
     # si el id de la remera no se encuentra en la base de datos,
     # mandar 404
 
     # si el id se encuentra, obtener el archivo y mostrarlo
-    return render_template('remera.html')
+    return render_template('remera.html', id_remera=id_remera)
 
 @app.route('/publicar', methods=["POST"])
 def publicar():
@@ -96,7 +99,7 @@ def publicar():
     cur.execute('insert into nodakar values (?,?,?,?,?,?,?,?)', datos)
     get_db().commit()
 
-    return redirect(url_for("remera"))
+    return redirect(url_for("remera", id_remera=id_remera))
 
 if __name__ == '__main__':
 
