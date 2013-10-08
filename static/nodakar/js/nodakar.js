@@ -246,6 +246,8 @@ document.getElementById("btn-fin").
 window.onload = function() {
     $('input[type=file]').bootstrapFileInput();
 
+    $('#color').minicolors({theme: 'bootstrap', defaultValue: '000000'});
+
     $('#disenios a').click(function (e) {
         e.preventDefault();
         e.stopPropagation();

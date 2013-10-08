@@ -2,6 +2,7 @@
 
   {% block head %}
   <link href='http://fonts.googleapis.com/css?family=Permanent+Marker|Julee|Schoolbell|Merienda+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='jquery-minicolors/jquery.minicolors.css') }}">
   <script src="{{ url_for('static', filename='fabricjs/all.js') }}"></script>
   {% endblock %}
 
@@ -89,6 +90,10 @@
               <img src="{{ url_for('static', filename='nodakar/imagenes/piedra-b.svg') }}"/>
             </a>
           </div>
+        </div>
+        <div class="form-group">
+          <label>Coloreá el texto o diseño seleccionado</label>
+          <input type="hidden" id="color" class="form-control">
         </div>
         <div class="form-group">
           <label>Editá lo seleccionado</label>
@@ -219,5 +224,6 @@
 
   {% block bodyscripts %}
   <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.file-input.js') }}"></script>
+  <script src="{{ url_for('static', filename='jquery-minicolors/jquery.minicolors.min.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='nodakar/js/nodakar.js') }}"></script>
   {% endblock %}
