@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 
   {% block body %}
-  <h3>Remera</h3>
-  <img src="{{ config.URL_SUBIDOS }}{{ id_remera }}.png"></img>
+  <div class="container">
+    <div class="col-md-4">
+      <h3><strong>{{ nombre }}</strong> le dijo NO al Dakar</h3>
+      <p>
+        Decile vos también,
+      <a href="{{ url_for('index') }}" class="btn btn-default btn-lg">
+        Diseñá tu remera</a>
+      </p>
+      <h3>Compartir</h3>
+    </div>
+    <div class="col-md-8">
+      <img src="{{ config.URL_SUBIDOS }}{{ id_remera }}.png"></img>
+    </div>
+  </div>
   {% endblock %}

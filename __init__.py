@@ -72,7 +72,9 @@ def remera(id_remera):
     if datos == None:
         abort(404)
 
-    return render_template('remera.html', id_remera=id_remera)
+    nombre = datos[2]
+
+    return render_template('remera.html', nombre=nombre, id_remera=id_remera)
 
 @app.route('/publicar', methods=["POST"])
 def publicar():
