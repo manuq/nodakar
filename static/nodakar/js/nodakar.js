@@ -74,6 +74,16 @@ function actualizarTexto(nuevoTexto) {
     }
 }
 
+function colorearSeleccionado(color, opacidad) {
+    var obj = canvas.getActiveObject();
+
+    if (obj == null || obj == undefined) {
+        return;
+    }
+    obj.set({fill: color});
+    canvas.renderAll();
+}
+
 function borrarSeleccionado() {
     var obj = canvas.getActiveObject();
     var group = canvas.getActiveGroup();
@@ -170,7 +180,6 @@ function canvasComoImagen() {
         return canvasSalida.toDataURL();
 }
 
-
 // MENU -------------------------------------
 
 document.getElementById("menu-remera").
@@ -246,7 +255,11 @@ document.getElementById("btn-fin").
 window.onload = function() {
     $('input[type=file]').bootstrapFileInput();
 
-    $('#color').minicolors({theme: 'bootstrap', defaultValue: '000000'});
+    $('#color').minicolors({
+        theme: 'bootstrap',
+        defaultValue: '000000',
+        change: colorearSeleccionado
+    });
 
     $('#disenios a').click(function (e) {
         e.preventDefault();
