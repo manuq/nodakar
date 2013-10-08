@@ -9,6 +9,7 @@ from flask import request
 from flask import redirect
 from flask import url_for
 from flask import g
+from flask import abort
 
 BASE_DE_DATOS = os.path.join(os.path.dirname(__file__), 'nodakar.db')
 CARPETA_SUBIDOS = os.path.join(os.path.dirname(__file__), 'media')
@@ -65,10 +66,12 @@ def index():
 
 @app.route('/remera/<id_remera>')
 def remera(id_remera):
-    # si el id de la remera no se encuentra en la base de datos,
-    # mandar 404
+    cur = get_db().cursor()
+    cur.execute('select * from nodakar where id_remera=?', (id_remera,))
+    datos = cur.fetchone()
+    if datos == None:
+        abort(404)
 
-    # si el id se encuentra, obtener el archivo y mostrarlo
     return render_template('remera.html', id_remera=id_remera)
 
 @app.route('/publicar', methods=["POST"])
@@ -100,6 +103,10 @@ def publicar():
     get_db().commit()
 
     return redirect(url_for("remera", id_remera=id_remera))
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
 
