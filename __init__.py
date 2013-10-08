@@ -63,7 +63,16 @@ def close_connection(exception):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    cur = get_db().cursor()
+    cur.execute('select id_remera from nodakar ' +
+                'where censurada=0 ' +
+                'order by random() limit 5')
+    hechas = []
+    for dato in cur.fetchall():
+        hechas.append(dato[0])
+
+    print hechas
+    return render_template('index.html', hechas=hechas)
 
 @app.route('/remera/<id_remera>')
 def remera(id_remera):
