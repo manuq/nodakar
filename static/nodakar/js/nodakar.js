@@ -40,8 +40,12 @@ canvas.selectionLineWidth = 3;
 
 function imagenSVGCargada(objects) {
     var obj = objects[0];
-    obj.set({'top': canvas.height / 4,
-             'left': canvas.width / 2});
+    var color = $("#color").attr("value");
+    obj.set({
+        'top': canvas.height / 4,
+        'left': canvas.width / 2,
+        'fill': color
+    });
     canvas.add(obj);
     canvas.setActiveObject(obj);
 //    canvas.renderAll();
@@ -54,10 +58,13 @@ function imagenSVGCargada(objects) {
 
 function agregarTexto(texto) {
     var textoObj = new fabric.Text(texto);
+    var color = $("#color").attr("value");
+    console.log(color);
     textoObj.set({
         'top': canvas.height / 2,
         'left': canvas.width / 2,
-        'fontFamily': 'Julee'
+        'fontFamily': 'Julee',
+        'fill': color
     });
     canvas.add(textoObj);
     return textoObj;
