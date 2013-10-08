@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import sqlite3
+import uuid
 
 from flask import Flask
 from flask import render_template
@@ -10,10 +11,13 @@ from flask import url_for
 from flask import g
 
 BASE_DE_DATOS = os.path.join(os.path.dirname(__file__), 'nodakar.db')
+CARPETA_SUBIDOS = os.path.join(os.path.dirname(__file__), 'media')
+
 
 PRODUCCION = False
 
 app = Flask(__name__)
+app.config['CARPETA_SUBIDOS'] = CARPETA_SUBIDOS
 
 class WebFactionMiddleware(object):
     def __init__(self, app):
@@ -62,12 +66,26 @@ def gracias():
 
 @app.route('/publicar', methods=["POST"])
 def publicar():
-    # FIXME guardar imagen en disco
-    # request.form['imagen']
+
+    # hacer un archivo de nombre unico para la imagen
+    nombre_archivo = None
+    nombre_con_subdir = None
+    while nombre_archivo is None:
+        nombre = str(uuid.uuid4())[:8] + '.png'
+        nombre_con_subdir = os.path.join(app.config['CARPETA_SUBIDOS'], nombre)
+        if not os.path.exists(nombre_con_subdir):
+            nombre_archivo = nombre
+
+    archivo = open(nombre_con_subdir, "wb")
+
+    datos_imagen = request.form['imagen']
+    encabezado, cuerpo = datos_imagen.split(',')
+    archivo.write(cuerpo.decode('base64'))
+    archivo.close()
 
     datos = (None, request.form['nombre'], request.form['correo'],
              request.form['ciudad'], request.form['provincia'],
-             request.form['pais'], "/media/asd")
+             request.form['pais'], nombre_archivo)
 
     cur = get_db().cursor()
     cur.execute('insert into nodakar values (?,?,?,?,?,?,?)', datos)
