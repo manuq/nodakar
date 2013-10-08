@@ -77,7 +77,7 @@ body {
 
 #mas-info {
   color: #fefefe;
-  background-color: #3b5998;
+  background-color: #333;
   min-height: 800px;
 }
 
@@ -89,4 +89,10 @@ body {
 #remera-publicada {
   padding-top: 30px;
   margin-bottom: 60px;
+}
+
+#hechas {
+  color: #fefefe;
+  background-color: #57b004;
+  min-height: 350px;
 }

@@ -196,6 +196,13 @@ document.getElementById("menu-remera").
         }, 800);
     });
 
+document.getElementById("menu-hechas").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='hechas']").position().top
+        }, 800);
+    });
+
 document.getElementById("mas-info-remera").
     addEventListener('click', function (e) {
         $("body, html").animate({
