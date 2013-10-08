@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+  {% block head %}
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+  {% endblock %}
+
   {% block body %}
   <div class="container">
     <div id="barra-detalle" class="col-md-4">
@@ -11,6 +15,16 @@
             Diseñá tu remera</a>
         </p>
         <h2>Compartir</h2>
+        <p>
+          <a class="btn btn-default btn-lg" href="https://twitter.com/share?text=%40somoslosverdes+y+yo+le+decimos+%23NoAlDakar" target="_blank">
+            <span class="glyphicon icon-twitter"></span> Compartir en Twitter</a>
+          <br/>
+          <br/>
+          <a class="btn btn-default btn-lg" href="https://www.facebook.com/sharer/sharer.php?u={{ config.URL_SITIO }}{{ url_for('remera', id_remera='{{ id_remera }}') }}" target="_blank">
+            <span class="glyphicon icon-facebook"></span> Compartir en Facebook
+          </a>
+        </p>
+
       </div>
       <div id="logo-wrap" class="gris">
         <div class="container clear-top">

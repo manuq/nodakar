@@ -22,6 +22,7 @@ app.config['CARPETA_SUBIDOS'] = CARPETA_SUBIDOS
 
 # FIXME PROD cambiar
 app.config['URL_SUBIDOS'] = "http://0.0.0.0:8000/"
+app.config['URL_SITIO'] = "http://0.0.0.0:5000/"
 
 class WebFactionMiddleware(object):
     def __init__(self, app):
