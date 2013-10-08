@@ -1,4 +1,5 @@
 *.pyc
+/pruebas/
 /venv/
 /media/
 /nodakar.db
