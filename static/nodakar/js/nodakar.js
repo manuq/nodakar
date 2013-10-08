@@ -295,6 +295,7 @@ canvas.on('object:selected', function(e) {
     } else {
         textoElem.value = "";
     }
+    $("#color").minicolors("value", e.target.fill);
 });
 
 canvas.on('before:selection:cleared', function(e) {
