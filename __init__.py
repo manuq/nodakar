@@ -77,7 +77,8 @@ def index():
 @app.route('/remera/<id_remera>')
 def remera(id_remera):
     cur = get_db().cursor()
-    cur.execute('select * from nodakar where id_remera=?', (id_remera,))
+    cur.execute('select * from nodakar ' +
+                'where id_remera=? and censurada=0', (id_remera,))
     datos = cur.fetchone()
     if datos == None:
         abort(404)
