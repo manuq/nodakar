@@ -21,7 +21,7 @@
             <span class="glyphicon icon-twitter"></span> Compartir en Twitter</a>
           <br/>
           <br/>
-          <a class="btn btn-default btn-lg" href="https://www.facebook.com/sharer/sharer.php?u={{ config.URL_SITIO }}{{ url_for('remera', id_remera='{{ id_remera }}') }}" target="_blank">
+          <a id="facebook-btn" class="btn btn-default btn-lg" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
             <span class="glyphicon icon-facebook"></span> Compartir en Facebook
           </a>
         </p>
@@ -40,4 +40,12 @@
     </div>
   </div>
   </div>
+  {% endblock %}
+
+  {% block bodyscripts %}
+  <script type="text/javascript">
+    window.onload = function() {
+      $('#facebook-btn').prop("href", "https://www.facebook.com/sharer/sharer.php?u=" + document.URL);
+    }
+  </script>
   {% endblock %}
