@@ -203,10 +203,17 @@ document.getElementById("menu-hechas").
         }, 800);
     });
 
-document.getElementById("mas-info-remera").
+document.getElementById("info-arriba-1").
     addEventListener('click', function (e) {
         $("body, html").animate({
-            scrollTop: $("div[name='remera']").position().top
+            scrollTop: $("#header").position().top
+        }, 800);
+    });
+
+document.getElementById("info-arriba-2").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("#header").position().top
         }, 800);
     });
 
@@ -214,6 +221,13 @@ document.getElementById("btn-antecedentes").
     addEventListener('click', function (e) {
         $("body, html").animate({
             scrollTop: $("div[name='info-antecedentes']").position().top
+        }, 800);
+    });
+
+document.getElementById("btn-oponemos").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='info-oponemos']").position().top
         }, 800);
     });
 
