@@ -224,6 +224,14 @@ document.getElementById("info-arriba-3").
         }, 800);
     });
 
+
+document.getElementById("info-arriba-4").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("#header").position().top
+        }, 800);
+    });
+
 document.getElementById("btn-antecedentes").
     addEventListener('click', function (e) {
         $("body, html").animate({
@@ -242,6 +250,13 @@ document.getElementById("btn-opinion").
     addEventListener('click', function (e) {
         $("body, html").animate({
             scrollTop: $("div[name='info-opinion']").position().top
+        }, 800);
+    });
+
+document.getElementById("btn-recorrido").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='info-recorrido']").position().top
         }, 800);
     });
 
