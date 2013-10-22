@@ -210,10 +210,10 @@ document.getElementById("mas-info-remera").
         }, 800);
     });
 
-document.getElementById("menu-mas-info").
+document.getElementById("btn-antecedentes").
     addEventListener('click', function (e) {
         $("body, html").animate({
-            scrollTop: $("div[name='mas-info']").position().top
+            scrollTop: $("div[name='info-antecedentes']").position().top
         }, 800);
     });
 
