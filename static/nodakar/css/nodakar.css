@@ -13,7 +13,6 @@ body {
 }
 
 #header .underline {
-  color: #fefefe;
   text-decoration: underline;
 }
 
@@ -23,7 +22,8 @@ body {
 
 #header .lead1 {
   color: #222;
-  background-color: #ff60b6;
+  background-color: #fff;
+  border: 20px solid #ff60b6;
 }
 
 #header .lead2 {
