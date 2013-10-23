@@ -21,6 +21,18 @@ body {
   margin-top: 30px;
 }
 
+#header .lead1 {
+  color: #222;
+  background-color: #ff60b6;
+}
+
+#header .lead2 {
+  color: #222;
+  background-color: #ffc556;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 #logo-wrap {
   min-height: 124px;
   border-bottom: 20px solid #57b004;
