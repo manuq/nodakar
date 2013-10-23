@@ -240,6 +240,13 @@ document.getElementById("info-arriba-5").
         }, 800);
     });
 
+document.getElementById("info-arriba-6").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("#header").position().top
+        }, 800);
+    });
+
 document.getElementById("btn-antecedentes").
     addEventListener('click', function (e) {
         $("body, html").animate({
@@ -272,6 +279,13 @@ document.getElementById("btn-proyecto").
     addEventListener('click', function (e) {
         $("body, html").animate({
             scrollTop: $("div[name='info-proyecto']").position().top
+        }, 800);
+    });
+
+document.getElementById("btn-documentos").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='info-documentos']").position().top
         }, 800);
     });
 

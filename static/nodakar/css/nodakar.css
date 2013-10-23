@@ -75,8 +75,8 @@ body {
   background-repeat: no-repeat;
 }
 
-#info-antecedentes {
-  min-height: 800px;
+#info-documentos {
+  margin-bottom: 600px;
 }
 
 #barra-detalle {
