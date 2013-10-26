@@ -173,8 +173,11 @@ function canvasComoImagen() {
 
         var canvasImagen = document.getElementById("nodakar");
 
-        var fondo = new Image();
-        fondo.src = fondoLineas;
+        var imagenFondoColor = new Image();
+        imagenFondoColor.src = fondoColor;
+
+        var imagenFondoLineas = new Image();
+        imagenFondoLineas.src = fondoLineas;
 
         var imagen = new Image();
         imagen.src = canvasImagen.toDataURL();
@@ -184,7 +187,8 @@ function canvasComoImagen() {
         canvasSalida.height = canvasImagen.height;
 
         var ctx = canvasSalida.getContext("2d");
-        ctx.drawImage(fondo, 0, 0);
+        ctx.drawImage(imagenFondoColor, 0, 0);
+        ctx.drawImage(imagenFondoLineas, 0, 0);
         ctx.drawImage(imagen, 0, 0);
 
         return canvasSalida.toDataURL();
