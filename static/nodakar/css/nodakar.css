@@ -83,7 +83,7 @@ body {
 }
 
 #nodakar {
-  background-image: url("../imagenes/remera.png");
+  background-image: url("../imagenes/remera.png"), url("../imagenes/remera-a.png");
   background-repeat: no-repeat;
 }
 
