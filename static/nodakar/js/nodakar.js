@@ -399,8 +399,9 @@ window.onload = function() {
     });
 
     $("#imagen").change(function (e) {
-        for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-            var file = e.originalEvent.srcElement.files[i];
+        var ele = e.originalEvent.target || e.originalEvent.srcElement;
+        for (var i = 0; i < ele.files.length; i++) {
+            var file = ele.files[i];
 
             var reader = new FileReader();
             reader.onloadend = function() {
