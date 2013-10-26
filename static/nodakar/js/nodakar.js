@@ -338,8 +338,37 @@ document.getElementById("btn-fin").
         inputImagen.value = canvasComoImagen();
     });
 
+var colorRemera = document.getElementById("color-remera");
+colorRemera.onchange = function() {
+    var canvasImagen = document.getElementById("nodakar");
+    switch(this.value) {
+        case "Blanco":
+          canvasImagen.style.backgroundImage = 'url("/static/nodakar/imagenes/remera.png"), url("/static/nodakar/imagenes/remera-a.png")';
+          break;
+        case "Rojo":
+          canvasImagen.style.backgroundImage = 'url("/static/nodakar/imagenes/remera.png"), url("/static/nodakar/imagenes/remera-b.png")';
+          break;
+        case "Amarillo":
+          canvasImagen.style.backgroundImage = 'url("/static/nodakar/imagenes/remera.png"), url("/static/nodakar/imagenes/remera-c.png")';
+          break;
+        case "Verde":
+          canvasImagen.style.backgroundImage = 'url("/static/nodakar/imagenes/remera.png"), url("/static/nodakar/imagenes/remera-d.png")';
+          break;
+        case "Celeste":
+          canvasImagen.style.backgroundImage = 'url("/static/nodakar/imagenes/remera.png"), url("/static/nodakar/imagenes/remera-e.png")';
+          break;
+        case "Azul":
+          canvasImagen.style.backgroundImage = 'url("/static/nodakar/imagenes/remera.png"), url("/static/nodakar/imagenes/remera-f.png")';
+          break;
+        case "Violeta":
+          canvasImagen.style.backgroundImage = 'url("/static/nodakar/imagenes/remera.png"), url("/static/nodakar/imagenes/remera-g.png")';
+          break;
+    }
+};
+
 window.onload = function() {
     $('input[type=file]').bootstrapFileInput();
+    $('.selectpicker').selectpicker();
 
     $('#color').minicolors({
         theme: 'bootstrap',

@@ -143,3 +143,25 @@ body {
 .hechas-contenedor img {
   width: 300px;
 }
+
+.dropdown-menu.inner .a {
+  background-color: #ffffff;
+}
+.dropdown-menu.inner .b {
+  background-color: #ff6057;
+}
+.dropdown-menu.inner .c {
+  background-color: #f7ff57;
+}
+.dropdown-menu.inner .d {
+  background-color: #57ff62;
+}
+.dropdown-menu.inner .e {
+  background-color: #57ffff;
+}
+.dropdown-menu.inner .f {
+  background-color: #576fff;
+}
+.dropdown-menu.inner .g {
+  background-color: #ff57f5;
+}
