@@ -165,3 +165,7 @@ body {
 .dropdown-menu.inner .g {
   background-color: #ff57f5;
 }
+
+label.error {
+  color: #ff3333;
+}

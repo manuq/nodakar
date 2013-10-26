@@ -378,6 +378,7 @@ colorRemera.onchange = function() {
 window.onload = function() {
     $('input[type=file]').bootstrapFileInput();
     $('.selectpicker').selectpicker();
+    $("#formu-publicar").validate();
 
     $('#color').minicolors({
         theme: 'bootstrap',
