@@ -10,6 +10,12 @@ from flask import redirect
 from flask import url_for
 from flask import g
 from flask import abort
+from flask.ext.login import LoginManager
+from flask.ext.login import UserMixin
+from flask.ext.login import login_required
+from flask.ext.login import login_user
+from flask.ext.login import logout_user
+from flask.ext.login import current_user
 
 BASE_DE_DATOS = os.path.join(os.path.dirname(__file__), 'nodakar.db')
 CARPETA_SUBIDOS = os.path.join(os.path.dirname(__file__), 'media')
@@ -60,6 +66,51 @@ def close_connection(exception):
     db = getattr(g, '_database', None)
     if db is not None:
         db.close()
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "entrar"
+
+class Usuario(UserMixin):
+    def __init__(self, id_usuario):
+        UserMixin.__init__(self)
+        self.id = id_usuario
+
+    def get_id(self):
+        return self.id
+
+usuario_admin = Usuario(u'admin')
+
+@login_manager.user_loader
+def cargar_usuario(id_usuario):
+    return usuario_admin
+
+@app.route('/admin')
+@login_required
+def admin():
+    cur = get_db().cursor()
+    cur.execute("select * from nodakar")
+    datos = cur.fetchall()
+    return render_template('admin.html', datos=datos, usuario=current_user)
+
+def se_autoriza(formu):
+    # FIXME PROD cambiar
+    return formu['username'].strip() == 'admin'
+
+@app.route("/admin/entrar", methods=["GET", "POST"])
+def entrar():
+    if request.method == 'POST':
+        if se_autoriza(request.form):
+            login_user(usuario_admin)
+            return redirect(request.args.get("next") or url_for("admin"))
+
+    return render_template("entrar.html", usuario=current_user)
+
+@app.route("/admin/salir")
+@login_required
+def salir():
+    logout_user()
+    return redirect(url_for('index'))
 
 @app.route('/')
 def index():
