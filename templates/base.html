@@ -10,6 +10,16 @@
   {% endblock %}
 </head>
 <body>
+  {% block admin %}
+    {% if usuario is defined and usuario.is_authenticated() %}
+  <div id="admin-hud">
+    {% if id_remera is defined %}
+      <a class="btn btn-default btn-lg">Bloquear</a>
+    {% endif %}
+    <a class="btn btn-default btn-lg">Salir</a>
+  </div>
+    {% endif %}
+  {% endblock %}
   {% block body %}
   {% endblock %}
   <script src="//code.jquery.com/jquery.js"></script>

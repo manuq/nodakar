@@ -122,8 +122,7 @@ def index():
     for dato in cur.fetchall():
         hechas.append(dato[0])
 
-    print hechas
-    return render_template('index.html', hechas=hechas)
+    return render_template('index.html', hechas=hechas, usuario=current_user)
 
 @app.route('/remera/<id_remera>')
 def remera(id_remera):
@@ -136,7 +135,7 @@ def remera(id_remera):
 
     nombre = datos[2]
 
-    return render_template('remera.html', nombre=nombre, id_remera=id_remera)
+    return render_template('remera.html', nombre=nombre, id_remera=id_remera, usuario=current_user)
 
 @app.route('/publicar', methods=["POST"])
 def publicar():

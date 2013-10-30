@@ -170,6 +170,10 @@ label.error {
   color: #ff3333;
 }
 
+#admin-container {
+  margin-top: 100px;
+}
+
 #lista-remeras tr td {
   vertical-align: middle;
 }
@@ -187,4 +191,18 @@ label.error {
 
 .hechas-admin img {
   width: 100px;
+}
+
+#admin-hud {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  position: fixed;
+  right: 15px;
+  top: 0;
+  z-index: 100;
+  border-radius: 0 0 20px 20px;
+}
+
+#admin-hud a {
+  margin: 5px;
 }
