@@ -14,7 +14,10 @@
     {% if usuario is defined and usuario.is_authenticated() %}
   <div id="admin-hud">
     {% if id_remera is defined %}
-      <a class="btn btn-default btn-lg">Bloquear</a>
+      <a  href="{{ url_for('bloquear', id_remera=id_remera) }}" class="btn btn-default btn-lg">Bloquear</a>
+    {% endif %}
+    {% if not viendo_lista %}
+      <a href="{{ url_for('admin') }}" class="btn btn-default btn-lg">Ver todas</a>
     {% endif %}
     <a href="{{ url_for('salir') }}" class="btn btn-default btn-lg">Salir</a>
   </div>

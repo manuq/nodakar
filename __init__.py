@@ -91,7 +91,7 @@ def admin():
     cur = get_db().cursor()
     cur.execute("select * from nodakar")
     datos = cur.fetchall()
-    return render_template('admin.html', datos=datos, usuario=current_user)
+    return render_template('admin.html', datos=datos, usuario=current_user, viendo_lista=True)
 
 def se_autoriza(formu):
     # FIXME PROD cambiar
@@ -136,6 +136,16 @@ def remera(id_remera):
     nombre = datos[2]
 
     return render_template('remera.html', nombre=nombre, id_remera=id_remera, usuario=current_user)
+
+@app.route("/admin/bloquear/<id_remera>")
+@login_required
+def bloquear(id_remera):
+    cur = get_db().cursor()
+    cur.execute('update nodakar set censurada=1 ' +
+                'where id_remera=?', (id_remera,))
+    get_db().commit()
+
+    return redirect(url_for('admin'))
 
 @app.route('/publicar', methods=["POST"])
 def publicar():
