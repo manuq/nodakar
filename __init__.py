@@ -127,21 +127,37 @@ def index():
 @app.route('/remera/<id_remera>')
 def remera(id_remera):
     cur = get_db().cursor()
-    cur.execute('select * from nodakar ' +
-                'where id_remera=? and censurada=0', (id_remera,))
+    if current_user.is_authenticated():
+        cur.execute('select * from nodakar ' +
+                    'where id_remera=?', (id_remera,))
+    else:
+        cur.execute('select * from nodakar ' +
+                    'where id_remera=? and censurada=0', (id_remera,))
     datos = cur.fetchone()
     if datos == None:
         abort(404)
 
     nombre = datos[2]
+    censurada = datos[7]
 
-    return render_template('remera.html', nombre=nombre, id_remera=id_remera, usuario=current_user)
+    return render_template('remera.html', nombre=nombre, censurada=censurada,
+                           id_remera=id_remera, usuario=current_user)
 
 @app.route("/admin/bloquear/<id_remera>")
 @login_required
 def bloquear(id_remera):
     cur = get_db().cursor()
     cur.execute('update nodakar set censurada=1 ' +
+                'where id_remera=?', (id_remera,))
+    get_db().commit()
+
+    return redirect(url_for('admin'))
+
+@app.route("/admin/desbloquear/<id_remera>")
+@login_required
+def desbloquear(id_remera):
+    cur = get_db().cursor()
+    cur.execute('update nodakar set censurada=0 ' +
                 'where id_remera=?', (id_remera,))
     get_db().commit()
 
