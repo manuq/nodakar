@@ -1,1 +1,42 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
 <h2>Administración</h2>
+<p>
+  Esta es una lista de todas las remeras diseñadas.  En fondo rojo
+  aparecen las bloqueadas o "censuradas".  Para bloquear una remera
+  cuando su contenido es ofensivo: hacer click en la remera y después
+  en el botón "bloquear" que aparece en la esquina superior derecha.
+  Para desbloquear una remera hacer lo mismo, pero apretar en el botón
+  "desbloquear".
+
+<table id="lista-remeras" class="table table-condensed">
+<tr>
+  <th>Remera</th>
+  <th>Nombre</th>
+  <th>Correo</th>
+  <th>Ciudad</th>
+  <th>Provincia</th>
+  <th>País</th>
+</tr>
+{% for dato in datos %}
+{% set id_remera = dato[1] %}
+{% set censurada = dato[7] == 1 %}
+<tr {% if censurada %}class="censurada"{% endif %}>
+  <td>
+    <div class="hechas-admin">
+      <a href="{{ url_for('remera', id_remera=id_remera) }}">
+        <img src="{{ config.URL_SUBIDOS }}{{ id_remera }}.png" alt="{{ id_remera }}">
+      </a>
+    </div>
+  </td>
+  <td>{{ dato[2] }}</td>
+  <td>{{ dato[3] }}</td>
+  <td>{{ dato[4] }}</td>
+  <td>{{ dato[5] }}</td>
+  <td>{{ dato[6] }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
