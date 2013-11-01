@@ -47,6 +47,11 @@ body {
 
 #mas-info .info h2 {
   margin-bottom: 30px;
+  font-family: 'Julee', cursive;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 2px 2px #92a752;
+  color: #fff;
 }
 
 #header .lead1 {
@@ -141,7 +146,7 @@ body {
   font-size: 38px;
 }
 
-#info-antecedentes h2, #info-recorrido h2 {
+#info-antecedentes h2, #info-recorrido h2, #info-proyecto h2, #info-documentos h2 {
     padding: 5px 15px;
     background-color: #ff4700;
     color: #fff;
@@ -156,6 +161,29 @@ body {
   color: #fff;
 }
 
+#info-antecedentes ul {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+#info-antecedentes li { 
+  padding-left: 1em; 
+  text-indent: -.7em;
+}
+
+#info-antecedentes li:before {
+  content: "• ";
+  color: red; /* or whatever color you prefer */
+}
+
+#info-antecedentes .naran {
+  padding: 4px;
+  background-color: #ff4700;
+  color: #fff;
+  font-weight: bold;
+}
+
 #info-oponemos .row {
   margin-bottom: 60px;
   border: 10px solid #fff856;
@@ -166,24 +194,32 @@ body {
   background-color: #fff856;
 }
 #info-opinion .row {
-  background-color: #d5ff8c;
+  background-color: #1c91be;
   padding-top: 20px;
   margin-bottom: 60px;
+  font-size: 16px;
+  color: #fff;
+}
+
+#info-opinion a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#info-opinion a.btn {
+  color: #000;
+  text-decoration: none;
+  font-weight: normal;
 }
 
 #info-proyecto {
-  margin-bottom: 600px;
+  margin-bottom: 300px;
+  font-size: 16px;
 }
 
-#info-proyecto h2 {
-  background-color: #8cddff;
-}
-
-#info-documentos {
-}
-
-#info-documentos h2 {
-  background-color: #d5ff8c;
+#info-proyecto h2, #info-documentos h2 {
+  background-color: #1c91be;
 }
 
 #barra-detalle {
@@ -275,6 +311,32 @@ label.error {
 
 #admin-hud a {
   margin: 5px;
+}
+
+#info-documentos, #info-recorrido {
+  margin-bottom: 30px;
+}
+
+#info-documentos a {
+  font-weight: bold;
+}
+
+#info-documentos a.btn {
+  font-weight: normal;
+}
+
+#info-documentos .container, #info-proyecto .container {
+  background-color: #fff;
+}
+
+#info-recorrido .btn {
+  background-color: #ff4700;
+  color: #fff;
+}
+
+#info-documentos .btn, #info-proyecto .btn {
+  background-color: #1c91be;
+  color: #fff;
 }
 
 .recorrido-img {
