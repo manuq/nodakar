@@ -51,7 +51,7 @@ body {
 
 #header .lead1 {
   color: #222;
-  background-color: #fcfdd2;
+  background-color: #fff;
   border: 10px solid #ff4700;
   padding-top: 15px;
   margin-bottom: 30px;
@@ -128,30 +128,51 @@ body {
   background-repeat: no-repeat;
 }
 
-#info-antecedentes h2, #info-antecedentes h3 {
-  padding: 5px;
-  background-color: #d5ff8c;
+#info-antecedentes .container {
+  background-color: #fff;
+  margin-bottom: 30px;
 }
 
-#info-recorrido h2 {
+#info-antecedentes h3 {
   padding: 5px;
   background-color: #ff4700;
   color: #fff;
-  margin-bottom: 30px;
   font-family: 'Julee', cursive;
-  font-size: 48px;
+  font-size: 38px;
+}
+
+#info-antecedentes h2, #info-recorrido h2 {
+    padding: 5px 15px;
+    background-color: #ff4700;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-family: 'Julee', cursive;
+    font-size: 48px;
+}
+
+#info-antecedentes .btn {
+  background-color: #ff4700;
+  color: #fff;
 }
 
 #info-oponemos .row {
   margin-bottom: 60px;
-  border: 20px solid #ffd78a;
+  border: 10px solid #fff856;
   background-color: #ffffff;
 }
 
+#info-oponemos .btn {
+  background-color: #fff856;
+}
 #info-opinion .row {
   background-color: #d5ff8c;
   padding-top: 20px;
   margin-bottom: 60px;
+}
+
+#info-proyecto {
+  margin-bottom: 600px;
 }
 
 #info-proyecto h2 {
@@ -159,7 +180,6 @@ body {
 }
 
 #info-documentos {
-  margin-bottom: 600px;
 }
 
 #info-documentos h2 {

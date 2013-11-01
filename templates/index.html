@@ -267,12 +267,12 @@
             <a href="#info-recorrido" id="btn-recorrido" class="btn btn-default">
               <span class="glyphicon glyphicon-arrow-down"></span> Recorrido</a>
 
+          <a href="#info-documentos" id="btn-documentos" class="btn btn-default">
+              <span class="glyphicon glyphicon-arrow-down"></span> Otros documentos</a>
+
           <p class="lead">Si no querés que el Dakar pase por tu ciudad o provincia, proponé a tus legisladores este proyecto de Ley "Libre de Dakar".
             <a href="#info-proyecto" id="btn-proyecto" class="btn btn-default">
               <span class="glyphicon glyphicon-arrow-down"></span> Proyecto de Declaración</a>
-
-          <p><a href="#info-documentos" id="btn-documentos" class="btn btn-default">
-              <span class="glyphicon glyphicon-arrow-down"></span> Otros documentos</a>
 
         </div>
       </div>
@@ -282,9 +282,9 @@
   <div name="info-antecedentes" id="info-antecedentes">
     <div class="container clear-top">
       <div class="row">
-        <div class="info col-md-10">
-
           <h2>Antecedentes</h2>
+
+        <div class="info col-md-10">
 
           <p>El Rally Dakar (anteriormente Rally París-Dakar) es una
           competición anual organizada por la Amaury Sport
@@ -661,6 +661,28 @@
   </div>
 
 
+  <div name="info-documentos" id="info-documentos">
+    <div class="container clear-top">
+      <div class="row">
+        <div class="info col-md-10">
+
+          <h2>Otros documentos</h2>
+
+          <p><a href="{{ url_for('static', filename='nodakar/documentos/secuelas.docx') }}">Rally Dakar y sus secuelas</a>
+
+          <p><a href="http://alainet.org/active/60809&lang=es">El Rally Dakar es anti ambiental - América Latina en movimiento</a>
+
+          <p>Más información: <a href="http://noaldakar.co.nr/">http://noaldakar.co.nr/</a>
+
+          <p>
+            <a href="#header" id="info-arriba-6" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-arrow-up"></span> Volver</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div name="info-proyecto" id="info-proyecto">
     <div class="container clear-top">
       <div class="row">
@@ -773,27 +795,6 @@
     </div>
   </div>
 
-  <div name="info-documentos" id="info-documentos">
-    <div class="container clear-top">
-      <div class="row">
-        <div class="info col-md-10">
-
-          <h2>Otros documentos</h2>
-
-          <p><a href="{{ url_for('static', filename='nodakar/documentos/secuelas.docx') }}">Rally Dakar y sus secuelas</a>
-
-          <p><a href="http://alainet.org/active/60809&lang=es">El Rally Dakar es anti ambiental - América Latina en movimiento</a>
-
-          <p>Más información: <a href="http://noaldakar.co.nr/">http://noaldakar.co.nr/</a>
-
-          <p>
-            <a href="#header" id="info-arriba-6" class="btn btn-default btn-lg">
-              <span class="glyphicon glyphicon-arrow-up"></span> Volver</a>
-
-        </div>
-      </div>
-    </div>
-  </div>
 
   {% endblock %}
 
