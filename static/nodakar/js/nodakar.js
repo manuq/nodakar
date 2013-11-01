@@ -203,6 +203,13 @@ document.getElementById("menu-remera").
         }, 800);
     });
 
+document.getElementById("menu-masinfo").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='mas-info']").position().top
+        }, 800);
+    });
+
 document.getElementById("menu-hechas").
     addEventListener('click', function (e) {
         $("body, html").animate({
