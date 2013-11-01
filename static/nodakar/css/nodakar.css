@@ -8,37 +8,70 @@ body {
   min-height: 350px;
 }
 
-#header > .container {
+#header .lead0 {
   background-image: url("../imagenes/imagen-header.png");
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: bottom right;
+  padding-bottom: 60px;
 }
 
 #header h1 {
-  margin-bottom: 30px;
+  margin-top: 60px;
+  margin-bottom: 0;
+  font-family: 'Julee', cursive;
+  font-weight: bold;
+  font-size: 48px;
+  text-shadow: 2px 2px #36812b;
+}
+
+#header h2 {
+  font-family: 'Julee', cursive;
+  margin-top: 0;
+  margin-bottom: 60px;
+  text-shadow: 1px 1px #36812b;
 }
 
 #header .underline {
   text-decoration: underline;
 }
 
+#menu-masinfo, #menu-hechas {
+  background-color: #ff4700;
+  color: #fff;
+}
+
 #mas-info .info {
-  margin-top: 30px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+#mas-info .info h2 {
+  margin-bottom: 30px;
 }
 
 #header .lead1 {
   color: #222;
-  background-color: #fff;
-  border: 10px solid #ffc556;
+  background-color: #fcfdd2;
+  border: 10px solid #ff4700;
   padding-top: 15px;
   margin-bottom: 30px;
 }
 
 #mas-info .lead2 {
   color: #222;
-  background-color: #ffc556;
+  background-color: #fff856;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+#mas-info .lead2 .lead {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+#mas-info .lead2 .lead .btn {
+  background-color: #fff856;
 }
 
 #logo-wrap {
@@ -98,6 +131,15 @@ body {
 #info-antecedentes h2, #info-antecedentes h3 {
   padding: 5px;
   background-color: #d5ff8c;
+}
+
+#info-recorrido h2 {
+  padding: 5px;
+  background-color: #ff4700;
+  color: #fff;
+  margin-bottom: 30px;
+  font-family: 'Julee', cursive;
+  font-size: 48px;
 }
 
 #info-oponemos .row {
@@ -213,4 +255,9 @@ label.error {
 
 #admin-hud a {
   margin: 5px;
+}
+
+.recorrido-img {
+  text-align: center;
+  margin-bottom: 30px;
 }

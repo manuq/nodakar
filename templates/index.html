@@ -10,24 +10,14 @@
   {% block body %}
   <div id="header">
     <div class="container clear-top">
+      <div class="row lead0">
 
       <h1>SACALE LA CARETA AL DAKAR</h1>
       <h2>Un evento de extrema exigencia… a la naturaleza</h2>
       <a href="#remera" id="menu-remera" class="btn btn-default btn-lg">
         <span class="glyphicon glyphicon-arrow-down"></span> Diseñá tu remera</a>
       <span class="lead">&nbsp;y sumate a la protesta en Rosario.</span>
-      <br/>
-      <br/>
-      <p class="lead">
-        Informate, hay
-      <a href="#mas-info" id="menu-masinfo" class="btn btn-default">
-        <span class="glyphicon glyphicon-arrow-down"></span>más información</a>
-      </p>
-      <p class="lead">
-        Mirá las remeras ya diseñadas
-      <a href="#hechas" id="menu-hechas" class="btn btn-default">
-        <span class="glyphicon glyphicon-arrow-down"></span>abajo</a>
-      </p>
+      </div>
       <div class="row lead1">
         <div class="info col-md-10">
 
@@ -57,6 +47,13 @@
           No al Dakar.
 
           <p class="lead">En Twitter: #bastadedakar
+
+          <p class="lead">
+            <a href="#mas-info" id="menu-masinfo" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-arrow-down"></span>Más información</a>
+
+            <a href="#hechas" id="menu-hechas" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-arrow-down"></span>Remeras ya diseñadas</a>
 
         </div>
       </div>
@@ -254,9 +251,9 @@
   <div name="mas-info" id="mas-info">
     <div class="container clear-top">
       <div class="row  lead2">
-        <div class="info col-md-10">
+        <div class="info col-md-12">
 
-          <p class="lead">Más información:
+          <h2>Más información</h2>
 
           <p><a href="#info-antecedentes" id="btn-antecedentes" class="btn btn-default">
               <span class="glyphicon glyphicon-arrow-down"></span> Antecedentes</a>
@@ -274,7 +271,7 @@
             <a href="#info-proyecto" id="btn-proyecto" class="btn btn-default">
               <span class="glyphicon glyphicon-arrow-down"></span> Proyecto de Declaración</a>
 
-            <a href="#info-documentos" id="btn-documentos" class="btn btn-default">
+          <p><a href="#info-documentos" id="btn-documentos" class="btn btn-default">
               <span class="glyphicon glyphicon-arrow-down"></span> Otros documentos</a>
 
         </div>
@@ -647,11 +644,12 @@
   <div name="info-recorrido" id="info-recorrido">
     <div class="container clear-top">
       <div class="row">
-        <div class="info col-md-10">
+        <div class="info col-md-12">
 
           <h2>Recorrido</h2>
-
-        <img alt="Recorrido 2014" src="{{ url_for('static', filename='nodakar/imagenes/recorrido2014.jpg') }}"/>
+          <div class="recorrido-img">
+            <img alt="Recorrido 2014" src="{{ url_for('static', filename='nodakar/imagenes/recorrido2014.jpg') }}"/>
+          </div>
 
           <p>
             <a href="#header" id="info-arriba-4" class="btn btn-default btn-lg">
