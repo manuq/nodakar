@@ -1,11 +1,17 @@
 body {
-  background-color: #eee;
+  background-color: #ddfff8;
 }
 
 #header {
   color: #fefefe;
   background-color: #57b004;
   min-height: 350px;
+}
+
+#header > .container {
+  background-image: url("../imagenes/imagen-header.png");
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
 #header h1 {
@@ -16,17 +22,19 @@ body {
   text-decoration: underline;
 }
 
-#header .info {
+#mas-info .info {
   margin-top: 30px;
 }
 
 #header .lead1 {
   color: #222;
   background-color: #fff;
-  border: 20px solid #ff60b6;
+  border: 10px solid #ffc556;
+  padding-top: 15px;
+  margin-bottom: 30px;
 }
 
-#header .lead2 {
+#mas-info .lead2 {
   color: #222;
   background-color: #ffc556;
   margin-top: 30px;
