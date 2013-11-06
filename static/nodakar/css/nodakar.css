@@ -5,30 +5,18 @@ body {
 #header {
   color: #fefefe;
   background-color: #57b004;
-  min-height: 350px;
 }
 
-#header .lead0 {
-  background-image: url("../imagenes/imagen-header.png");
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  padding-bottom: 60px;
+#header .lead0, #header h1 {
+  padding-bottom: 40px;
 }
 
 #header h1 {
-  margin-top: 60px;
   margin-bottom: 0;
-  font-family: 'Julee', cursive;
-  font-weight: bold;
-  font-size: 48px;
-  text-shadow: 2px 2px #36812b;
 }
 
-#header h2 {
-  font-family: 'Julee', cursive;
-  margin-top: 0;
-  margin-bottom: 60px;
-  text-shadow: 1px 1px #36812b;
+#header h1 img {
+  width: 100%;
 }
 
 #header .underline {
