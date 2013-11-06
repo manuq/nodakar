@@ -239,6 +239,10 @@ body {
   padding-bottom: 30px;
 }
 
+#hechas h2 {
+  margin-bottom: 0;
+}
+
 .hechas-contenedor {
   width: 100%;
   text-align: center;
