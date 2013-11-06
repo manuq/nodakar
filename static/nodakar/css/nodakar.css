@@ -47,11 +47,6 @@ body {
 
 #mas-info .info h2 {
   margin-bottom: 30px;
-  font-family: 'Julee', cursive;
-  font-size: 48px;
-  font-weight: bold;
-  text-shadow: 2px 2px #92a752;
-  color: #fff;
 }
 
 #header .lead1 {
@@ -139,21 +134,13 @@ body {
 }
 
 #info-antecedentes h3 {
-  padding: 5px;
+  padding: 0;
   background-color: #ff4700;
-  color: #fff;
-  font-family: 'Julee', cursive;
-  font-size: 38px;
 }
 
 #info-antecedentes h2, #info-recorrido h2, #info-proyecto h2, #info-documentos h2 {
-    padding: 5px 15px;
+    padding: 0;
     background-color: #ff4700;
-    color: #fff;
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-family: 'Julee', cursive;
-    font-size: 48px;
 }
 
 #info-antecedentes .btn {
