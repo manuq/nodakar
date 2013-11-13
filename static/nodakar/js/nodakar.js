@@ -14,6 +14,7 @@ var canvas = new fabric.Canvas('nodakar');
 
 var fondoColor = "/static/nodakar/imagenes/remera-a.png";
 var fondoLineas = "/static/nodakar/imagenes/remera.png";
+var fondoLogo = "/static/nodakar/imagenes/remera-logo2.png";
 
 var mascara = new fabric.Rect({
     originX: 'left',
@@ -179,6 +180,9 @@ function canvasComoImagen() {
         var imagenFondoLineas = new Image();
         imagenFondoLineas.src = fondoLineas;
 
+        var imagenFondoLogo = new Image();
+        imagenFondoLogo.src = fondoLogo;
+
         var imagen = new Image();
         imagen.src = canvasImagen.toDataURL();
 
@@ -189,6 +193,7 @@ function canvasComoImagen() {
         var ctx = canvasSalida.getContext("2d");
         ctx.drawImage(imagenFondoColor, 0, 0);
         ctx.drawImage(imagenFondoLineas, 0, 0);
+        ctx.drawImage(imagenFondoLogo, 0, 0);
         ctx.drawImage(imagen, 0, 0);
 
         return canvasSalida.toDataURL();
@@ -364,29 +369,36 @@ colorRemera.onchange = function() {
     switch(this.value) {
         case "Blanco":
           fondoColor = "/static/nodakar/imagenes/remera-a.png";
+          fondoLogo = "/static/nodakar/imagenes/remera-logo2.png";
           break;
         case "Rojo":
           fondoColor = "/static/nodakar/imagenes/remera-b.png";
+          fondoLogo = "/static/nodakar/imagenes/remera-logo1.png";
           break;
         case "Amarillo":
           fondoColor = "/static/nodakar/imagenes/remera-c.png";
+          fondoLogo = "/static/nodakar/imagenes/remera-logo1.png";
           break;
         case "Verde":
           fondoColor = "/static/nodakar/imagenes/remera-d.png";
+          fondoLogo = "/static/nodakar/imagenes/remera-logo1.png";
           break;
         case "Celeste":
           fondoColor = "/static/nodakar/imagenes/remera-e.png";
+          fondoLogo = "/static/nodakar/imagenes/remera-logo1.png";
           break;
         case "Azul":
           fondoColor = "/static/nodakar/imagenes/remera-f.png";
+          fondoLogo = "/static/nodakar/imagenes/remera-logo1.png";
           break;
         case "Violeta":
           fondoColor = "/static/nodakar/imagenes/remera-g.png";
+          fondoLogo = "/static/nodakar/imagenes/remera-logo1.png";
           break;
     }
     var canvasImagen = document.getElementById("nodakar");
     canvasImagen.style.backgroundImage =
-        'url("' + fondoLineas +'"), url("' + fondoColor + '")';
+        'url("' + fondoLogo +'"), url("' + fondoLineas +'"), url("' + fondoColor + '")';
 };
 
 window.onload = function() {
