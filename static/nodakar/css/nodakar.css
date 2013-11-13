@@ -138,8 +138,9 @@ body {
 }
 
 #info-antecedentes li { 
-  padding-left: 1em; 
+  padding-left: 1em;
   text-indent: -.7em;
+  margin-top: 6px;
 }
 
 #info-antecedentes li:before {
@@ -148,7 +149,7 @@ body {
 }
 
 #info-antecedentes .naran {
-  padding: 4px;
+  padding: 2px 4px;
   background-color: #ff4700;
   color: #fff;
   font-weight: bold;
