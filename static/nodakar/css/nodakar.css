@@ -190,7 +190,6 @@ body {
 }
 
 #info-proyecto {
-  margin-bottom: 300px;
   font-size: 16px;
 }
 
@@ -293,8 +292,12 @@ label.error {
   margin: 5px;
 }
 
-#info-documentos, #info-recorrido {
+#info-proyecto, #info-recorrido {
   margin-bottom: 30px;
+}
+
+#info-documentos {
+  margin-bottom: 300px;
 }
 
 #info-documentos a {
