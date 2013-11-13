@@ -121,11 +121,6 @@ body {
   margin-bottom: 30px;
 }
 
-#info-antecedentes h3 {
-  padding: 0;
-  background-color: #ff4700;
-}
-
 #info-antecedentes h2, #info-recorrido h2, #info-proyecto h2, #info-documentos h2 {
     padding: 0;
     background-color: #ff4700;
