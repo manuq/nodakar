@@ -296,6 +296,13 @@ document.getElementById("btn-proyecto").
         }, 800);
     });
 
+document.getElementById("btn-proyecto2").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='info-proyecto']").position().top
+        }, 800);
+    });
+
 document.getElementById("btn-documentos").
     addEventListener('click', function (e) {
         $("body, html").animate({

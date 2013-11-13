@@ -45,11 +45,16 @@ body {
   margin-bottom: 30px;
 }
 
+#mas-info .btn-group-vertical a {
+  margin-bottom: 10px;
+}
+
 #mas-info .lead2 {
   color: #222;
   background-color: #fff856;
   margin-top: 30px;
   margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 #mas-info .lead2 .lead {
