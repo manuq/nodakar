@@ -14,6 +14,24 @@
 
         <div id="head">
           <a href="#remera" id="menu-remera2"></a>
+
+
+<div id="hechas2">
+<div id="carrusel2" class="carousel slide">
+
+  <div class="carousel-inner">
+    {% for id_remera in hechas %}
+    <div class="item {% if loop.first %}active{% endif %}">
+      <div class="hechas2-contenedor">
+        <img src="{{ config.URL_SUBIDOS }}{{ id_remera }}.png" alt="{{ id_remera }}">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+</div>
+
         </div>
 
       <div class="text-center">

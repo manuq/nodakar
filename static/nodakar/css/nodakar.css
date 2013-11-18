@@ -203,9 +203,30 @@ body {
   margin-bottom: 60px;
 }
 
-#hechas {
-  color: #fefefe;
+#hechas, #hechas2 {
   background-color: #57b004;
+}
+
+#hechas2 {
+  width: 160px;
+  height: 165px;
+  position: absolute;
+  top: 90px;
+  right: 15px;
+}
+
+.hechas2-contenedor {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.hechas2-contenedor img {
+  width: 150px;
+}
+
+#hechas {
   min-height: 350px;
   padding-bottom: 30px;
 }

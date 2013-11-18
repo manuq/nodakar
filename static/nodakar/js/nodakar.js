@@ -418,6 +418,11 @@ window.onload = function() {
         pause: "false"
     });
 
+    $('#carrusel2').carousel({
+        interval: 3000,
+        pause: "false"
+    });
+
     $("#imagen").change(function (e) {
         var ele = e.originalEvent.target || e.originalEvent.srcElement;
         for (var i = 0; i < ele.files.length; i++) {
