@@ -208,6 +208,13 @@ document.getElementById("menu-remera").
         }, 800);
     });
 
+document.getElementById("menu-remera2").
+    addEventListener('click', function (e) {
+        $("body, html").animate({
+            scrollTop: $("div[name='remera']").position().top
+        }, 800);
+    });
+
 document.getElementById("menu-masinfo").
     addEventListener('click', function (e) {
         $("body, html").animate({

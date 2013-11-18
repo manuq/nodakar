@@ -15,17 +15,26 @@ body {
   width: 33%;
 }
 
-#header h1 {
-  margin-top: 5px;
-  margin-bottom: 0;
-}
-
-#header h1 img {
-  width: 100%;
-}
-
 #header .underline {
   text-decoration: underline;
+}
+
+#header #head {
+  width: 970px;
+  height: 317px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-image: url("../imagenes/head.jpg");
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#header #menu-remera2 {
+  width: 410px;
+  height: 170px;
+  position: absolute;
+  top: 140px;
+  left: 0;
 }
 
 #mas-info {
