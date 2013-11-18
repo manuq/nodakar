@@ -11,6 +11,10 @@ body {
   padding-bottom: 10px;
 }
 
+#header .lead0 a {
+  width: 33%;
+}
+
 #header h1 {
   margin-top: 5px;
   margin-bottom: 0;
