@@ -1,8 +1,8 @@
 // area en el que se puede diseñar
-AREA_IZQUIERDA = 150;
-AREA_ARRIBA = 55;
-AREA_ANCHO = 310;
-AREA_ALTO = 400;
+AREA_IZQUIERDA = 116;
+AREA_ARRIBA = 42;
+AREA_ANCHO = 239;
+AREA_ALTO = 308;
 
 fabric.Object.prototype.borderColor = "rgb(0,255,0)";
 fabric.Object.prototype.borderOpacityWhenMoving = 1;

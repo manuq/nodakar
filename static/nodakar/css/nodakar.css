@@ -43,6 +43,10 @@ body {
   font-size: small;
 }
 
+#col-canvas {
+  padding-right: 0;
+}
+
 #infobar {
   color: #eee;
 }
