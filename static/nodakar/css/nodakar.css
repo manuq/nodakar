@@ -37,6 +37,16 @@ body {
   left: 0;
 }
 
+#col-infobar {
+  background-color: #222;
+  padding: 15px;
+  font-size: small;
+}
+
+#infobar {
+  color: #eee;
+}
+
 #mas-info {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -67,10 +77,6 @@ body {
   color: #222;
   background-color: #fff856;
   padding-bottom: 20px;
-}
-
-#mas-info .leadbla {
-  background-color: #fff856;
 }
 
 #mas-info .lead2 .lead {
