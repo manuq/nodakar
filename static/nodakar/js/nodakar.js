@@ -215,13 +215,6 @@ document.getElementById("menu-remera2").
         }, 800);
     });
 
-document.getElementById("menu-masinfo").
-    addEventListener('click', function (e) {
-        $("body, html").animate({
-            scrollTop: $("div[name='mas-info']").position().top
-        }, 800);
-    });
-
 document.getElementById("menu-hechas").
     addEventListener('click', function (e) {
         $("body, html").animate({
@@ -302,13 +295,6 @@ document.getElementById("btn-recorrido").
     });
 
 document.getElementById("btn-proyecto").
-    addEventListener('click', function (e) {
-        $("body, html").animate({
-            scrollTop: $("div[name='info-proyecto']").position().top
-        }, 800);
-    });
-
-document.getElementById("btn-proyecto2").
     addEventListener('click', function (e) {
         $("body, html").animate({
             scrollTop: $("div[name='info-proyecto']").position().top

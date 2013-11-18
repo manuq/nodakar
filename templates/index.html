@@ -23,8 +23,20 @@
       <a href="#hechas" id="menu-hechas" class="btn btn-default btn-lg">
         <span class="glyphicon glyphicon-arrow-down"></span>Remeras ya diseñadas</a>
 
-      <a href="#mas-info" id="menu-masinfo" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-arrow-down"></span>Más información</a>
+      <span class="dropdown">
+        <a data-toggle="dropdown" href="#" id="menu-masinfo" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-arrow-down"></span>Más información</a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+
+          <li role="presentation"><a id="btn-oponemos" role="menuitem" tabindex="-1" href="#info-oponemos">Los Verdes nos oponemos al Rally Dakar</a></li>
+          <li role="presentation"><a id="btn-opinion" role="menuitem" tabindex="-1" href="#info-opinion">Opinión de Los Verdes Santa Fe</a></li>
+          <li role="presentation"><a id="btn-proyecto" role="menuitem" tabindex="-1" href="#info-proyecto">Declaración Provincia Libre de Dakar</a></li>
+          <li role="presentation"><a id="btn-antecedentes" role="menuitem" tabindex="-1" href="#info-antecedentes">Antecedentes</a></li>
+          <li role="presentation"><a id="btn-recorrido" role="menuitem" tabindex="-1" href="#info-recorrido">Recorrido</a></li>
+          <li role="presentation"><a id="btn-documentos" role="menuitem" tabindex="-1" href="#info-documentos">Otros documentos sobre impactos</a></li>
+
+        </ul>
+      </span>
       </div>
 
       </div>
@@ -248,55 +260,6 @@
   </a>
 </div>
 
-    </div>
-  </div>
-
-
-  <div name="mas-info" id="mas-info">
-    <div class="container clear-top">
-      <div class="row  lead2">
-        <h2>
-          <img
-             alt="Más información"
-             src="{{ url_for('static', filename='nodakar/imagenes/mas-informacion.png') }}">
-        </h2>
-      </div>
-
-      <div class="row lead2">
-        <div class="info col-md-12">
-
-          <div class="col-md-4 clear-top">
-            <div class="btn-group-vertical clear-top">
-
-            <a href="#info-oponemos" id="btn-oponemos" class="btn btn-default">
-              Los Verdes nos oponemos al Rally Dakar</a>
-
-            <a href="#info-opinion" id="btn-opinion" class="btn btn-default">
-              Opinión de Los Verdes Santa Fe</a>
-
-            <a href="#info-proyecto" id="btn-proyecto" class="btn btn-default">
-              Proyecto de Declaración</a>
-
-            <a href="#info-antecedentes" id="btn-antecedentes" class="btn btn-default">
-              Antecedentes</a>
-
-            <a href="#info-recorrido" id="btn-recorrido" class="btn btn-default">
-              Recorrido</a>
-
-            <a href="#info-documentos" id="btn-documentos" class="btn btn-default">
-              Otros documentos sobre impactos</a>
-
-            </div>
-          </div>
-
-          <div class="col-md-8 clear-top">
-          <p class="lead">Si no querés que el Dakar pase por tu ciudad o provincia, proponé a tus legisladores este proyecto de Ley "Libre de Dakar".
-            <a href="#info-proyecto" id="btn-proyecto2" class="btn btn-default">
-              Proyecto de Declaración</a>
-          </div>
-
-        </div>
-      </div>
     </div>
   </div>
 

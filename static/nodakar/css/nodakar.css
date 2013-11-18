@@ -11,8 +11,12 @@ body {
   padding-bottom: 10px;
 }
 
-#header .lead0 a {
+#header .lead0 a.btn {
   width: 33%;
+}
+
+#header .dropdown-menu>li>a:hover, #header .dropdown-menu>li>a:focus {
+  background-color: #57b004;
 }
 
 #header .underline {
@@ -51,46 +55,12 @@ body {
   color: #eee;
 }
 
-#mas-info {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-#mas-info .info {
-  margin-top: 10px;
-  padding-bottom: 10px;
-}
-
-#mas-info .info h2 {
-  margin-bottom: 30px;
-}
-
 #header .lead1 {
   color: #222;
   background-color: #fff;
   border: 10px solid #ff4700;
   padding-top: 15px;
   margin-bottom: 30px;
-}
-
-#mas-info .btn-group-vertical a {
-  margin-bottom: 10px;
-}
-
-#mas-info .lead2 {
-  color: #222;
-  background-color: #fff856;
-  padding-bottom: 20px;
-}
-
-#mas-info .lead2 .lead {
-  margin-top: 20px;
-  background-color: #fff;
-  padding: 20px;
-}
-
-#mas-info .lead2 .lead .btn {
-  background-color: #fff856;
 }
 
 #logo-wrap {
