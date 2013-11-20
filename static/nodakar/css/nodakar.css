@@ -24,20 +24,20 @@ body {
 }
 
 #header #head {
-  width: 970px;
-  height: 317px;
   margin-top: 5px;
   margin-bottom: 10px;
-  background-image: url("../imagenes/head.jpg");
-  background-repeat: no-repeat;
   position: relative;
 }
 
+#header #head img {
+  width: 100%;
+}
+
 #header #menu-remera2 {
-  width: 410px;
-  height: 170px;
+  width: 42%;
+  height: 100%;
   position: absolute;
-  top: 140px;
+  top: 0;
   left: 0;
 }
 
@@ -211,8 +211,8 @@ body {
   width: 160px;
   height: 165px;
   position: absolute;
-  top: 90px;
-  right: 15px;
+  top: 30%;
+  right: 2%;
 }
 
 .hechas2-contenedor {
