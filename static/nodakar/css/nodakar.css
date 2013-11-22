@@ -41,6 +41,14 @@ body {
   left: 0;
 }
 
+#header #menu-verdes {
+  width: 21%;
+  height: 30%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 #col-infobar {
   background-color: #222;
   padding: 15px;
