@@ -169,7 +169,7 @@ function cargarImagen(url) {
     fabric.Image.fromURL(url, imagenCargada);
 }
 
-function canvasComoImagen() {
+function canvasComoImagen(callback) {
         canvas.deactivateAll().renderAll();
 
         var canvasImagen = document.getElementById("nodakar");
@@ -184,19 +184,23 @@ function canvasComoImagen() {
         imagenFondoLogo.src = fondoLogo;
 
         var imagen = new Image();
+
+        imagen.onload = function () {
+            var canvasSalida = document.createElement('canvas');
+            canvasSalida.width = canvasImagen.width;
+            canvasSalida.height = canvasImagen.height;
+
+            var ctx = canvasSalida.getContext("2d");
+            ctx.drawImage(imagenFondoColor, 0, 0);
+            ctx.drawImage(imagenFondoLineas, 0, 0);
+            ctx.drawImage(imagenFondoLogo, 0, 0);
+            ctx.drawImage(imagen, 0, 0);
+
+            callback(canvasSalida.toDataURL());
+        }
+
         imagen.src = canvasImagen.toDataURL();
 
-        var canvasSalida = document.createElement('canvas');
-        canvasSalida.width = canvasImagen.width;
-        canvasSalida.height = canvasImagen.height;
-
-        var ctx = canvasSalida.getContext("2d");
-        ctx.drawImage(imagenFondoColor, 0, 0);
-        ctx.drawImage(imagenFondoLineas, 0, 0);
-        ctx.drawImage(imagenFondoLogo, 0, 0);
-        ctx.drawImage(imagen, 0, 0);
-
-        return canvasSalida.toDataURL();
 }
 
 // MENU -------------------------------------
@@ -354,7 +358,10 @@ document.getElementById("btn-bajar").
 document.getElementById("btn-fin").
     addEventListener('click', function (e) {
         var inputImagen = document.getElementById("inputImagen");
-        inputImagen.value = canvasComoImagen();
+        var cb = function (img) {
+            inputImagen.value = img;
+        }
+        canvasComoImagen(cb);
     });
 
 var colorRemera = document.getElementById("color-remera");
