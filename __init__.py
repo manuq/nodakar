@@ -117,7 +117,7 @@ def index():
     cur = get_db().cursor()
     cur.execute('select id_remera from nodakar ' +
                 'where censurada=0 ' +
-                'order by random() limit 5')
+                'order by id desc limit 5')
     hechas = []
     for dato in cur.fetchall():
         hechas.append(dato[0])
