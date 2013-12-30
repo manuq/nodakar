@@ -351,3 +351,14 @@ label.error {
   text-align: center;
   margin-bottom: 30px;
 }
+
+#galeria {
+  height: 380px;
+  overflow-y: auto;
+  background-color: #3B610C;
+}
+
+#galeria .thumbnail {
+  background-color: transparent;
+  border: none;
+}

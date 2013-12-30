@@ -430,6 +430,8 @@ window.onload = function() {
         pause: "false"
     });
 
+    $("#galeria img").unveil();
+
     $("#imagen").change(function (e) {
         var ele = e.originalEvent.target || e.originalEvent.srcElement;
         for (var i = 0; i < ele.files.length; i++) {

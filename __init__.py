@@ -117,12 +117,14 @@ def index():
     cur = get_db().cursor()
     cur.execute('select id_remera from nodakar ' +
                 'where censurada=0 ' +
-                'order by id desc limit 5')
+                'order by id desc')
     hechas = []
     for dato in cur.fetchall():
         hechas.append(dato[0])
 
-    return render_template('index.html', hechas=hechas, usuario=current_user)
+    ultimas = hechas[:5]
+
+    return render_template('index.html', ultimas=ultimas, hechas=hechas, usuario=current_user)
 
 @app.route('/remera/<id_remera>')
 def remera(id_remera):

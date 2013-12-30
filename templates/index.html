@@ -256,6 +256,18 @@
            src="{{ url_for('static', filename='nodakar/imagenes/disenos-animaron.png') }}">
       </h2>
 
+<div id="galeria" class="row">
+  {% for id_remera in hechas %}
+  <div class="col-xs-6 col-md-3">
+    <a href="{{ url_for('remera', id_remera=id_remera) }}" class="thumbnail">
+      <img src="{{ url_for('static', filename='nodakar/imagenes/loader.gif') }}" data-src="{{ config.URL_SUBIDOS }}{{ id_remera }}.png" alt="{{ id_remera }}">
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<h2 style="color:#fff">Últimas remeras</h2>
+
 <div id="carrusel" class="carousel slide">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -267,7 +279,7 @@
   </ol>
 
   <div class="carousel-inner">
-    {% for id_remera in hechas %}
+    {% for id_remera in ultimas %}
     <div class="item {% if loop.first %}active{% endif %}">
       <div class="hechas-contenedor">
         <img src="{{ config.URL_SUBIDOS }}{{ id_remera }}.png" alt="{{ id_remera }}">
@@ -820,6 +832,7 @@
   <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.file-input.js') }}"></script>
   <script src="{{ url_for('static', filename='jquery-minicolors/jquery.minicolors.min.js') }}"></script>
   <script src="{{ url_for('static', filename='bootstrap/js//bootstrap-select.js') }}"></script>
+  <script src="{{ url_for('static', filename='unveil/jquery.unveil.min.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='nodakar/js/nodakar.js') }}"></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_es.js"></script>
